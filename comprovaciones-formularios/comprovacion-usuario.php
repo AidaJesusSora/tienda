@@ -14,6 +14,7 @@ class dades {
 	public $passwd = null;
 	public $apellidos = null;
 	public $telefono = null;
+	public $user = false;
 		
 	/* Condiciones */ 
 	
@@ -232,6 +233,20 @@ class dades {
 			
 		}
 
+		/* Usuario */
+
+		public function getUser($user) {
+
+			$this->user = $user;
+
+		}
+
+		public function setUser($user) {
+
+			$this->user = $user;
+
+		}
+
 	//Parámetros de conexión
 	
 		function verificar_errores() {
@@ -245,9 +260,7 @@ class dades {
 				die ("</span>)");
 			}
 	
-			
 		}
-	
 	
 		function llamar_bbdd() {
 
@@ -271,7 +284,7 @@ class dades {
 				
 			}
 
-			$consulta=mysqli_query($con,"insert into persona values ('$this->dni','$this->nombre','$this->edad','$this->correo','$this->nickname','$this->passwd','$this->apellidos','$this->telefono')");
+			$consulta=mysqli_query($con,"insert into persona values ('$this->dni','$this->nombre','$this->edad','$this->correo','$this->nickname','$this->passwd','$this->apellidos','$this->telefono', '$this->user')");
 
 			if(!$consulta) {
 				
