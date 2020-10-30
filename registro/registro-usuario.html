@@ -1,72 +1,69 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
-	<link href="../style_index.css" rel="stylesheet" type="text/css">
+	<link href="../estilo/style_registro.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
-	<header class="header">
-		
-		<h1 class="center"> ¡QUIERO REGISTRARME! </h1>
-		
-	</header>
+<body id="body-background">
+
+	<div class="card text-center">
+		<div class="card-body">
+			<h4 class="card-title">¡Quiero registrarme a BookMarket!</h4>
+
+			<form action="./../comprovaciones-formularios/comprovacion_principal_usuario.php" method="post" class="container">
+	
+				<div class="col-left">
+			
+					<div class="form-group">
+						<input type="text" class="form-control" id="exampleInputEmail1" name="nickname" placeholder="Nickname">
+					</div>
+					
+					<div class="form-group">
+						<input type="text" class="form-control" id="exampleInputPassword1" name="dni" placeholder="DNI">
+					</div>
+					
+					<div class="form-group">
+						<input type="tel" step="any" class="form-control" id="exampleInputEmail1" name="telefono" placeholder="Telefono">
+					</div>
+					
+					<div class="form-group">
+						<input type="mail" class="form-control" id="exampleInputEmail1" name="correo" placeholder="Correo">
+					</div>
+				
+				</div>
+			
+				<div class="col-right">
+			
+					<div class="form-group">
+						<input type="text" class="form-control" id="exampleInputEmail1" name="nombre" placeholder="Nombre">
+					</div>
+					
+					<div class="form-group">
+						<input type="text" class="form-control" id="exampleInputPassword1" name="apellidos" placeholder="Apellidos">
+					</div>
+					
+					<div class="form-group">
+						<input type="number" class="form-control" id="exampleInputPassword1" name="edad" placeholder="Edad">
+					</div>
+					
+					<div class="form-group">
+						<input type="password" class="form-control" id="exampleInputPassword1" name="passwd" placeholder="Contraseña">
+					</div>
+				
+				</div>
+			
+				<p><button type="submit" class="btn btn-outline-info btn-block">Entrar</button></p>
+				
+			</form>
+			
+		</div>
+		<div class="card-footer text-muted">
+			<span class="cuenta-creada">Ya tengo una cuenta (<a href="../index.html">conectame</a>)</span>
+		</div>
+	</div>
 	
 	<br>
-	
-	<form action="principal_usuario.php" method="post" class="container">
-	
-		<div class="col-left">
-	
-			<div class="form-group">
-				<label>Nickname</label>
-				<input type="text" class="form-control" id="exampleInputEmail1" name="nickname">
-			</div>
-			
-			<div class="form-group">
-				<label>DNI</label>
-				<input type="text" class="form-control" id="exampleInputPassword1" name="dni">
-			</div>
-			
-			<div class="form-group">
-				<label>Telefono</label>
-				<input type="tel" step="any" class="form-control" id="exampleInputEmail1" name="telefono">
-			</div>
-			
-			<div class="form-group">
-				<label>Correo</label>
-				<input type="mail" class="form-control" id="exampleInputEmail1" name="correo">
-			</div>
-		
-		</div>
-	
-		<div class="col-right">
-	
-			<div class="form-group">
-				<label>Nombre</label>
-				<input type="text" class="form-control" id="exampleInputEmail1" name="nombre">
-			</div>
-			
-			<div class="form-group">
-				<label>Apellidos</label>
-				<input type="text" class="form-control" id="exampleInputPassword1" name="apellidos">
-			</div>
-			
-			<div class="form-group">
-				<label>Edad</label>
-				<input type="number" class="form-control" id="exampleInputPassword1" name="edad">
-			</div>
-			
-			<div class="form-group">
-				<label>Contraseña</label>
-				<input type="password" class="form-control" id="exampleInputPassword1" name="passwd">
-			</div>
-		
-        </div>
-	
-		<p><button type="submit" class="btn btn-outline-info">Entrar</button><span class="cuenta-creada">Ya tengo una cuenta (<a href="../index.html">conectame</a>)</span></p>
-		
-    </form>
-    	
+
 	<footer>Aida Jesus Sora</footer>
 		
 </body>

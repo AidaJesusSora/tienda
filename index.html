@@ -1,44 +1,52 @@
 <html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
-	<link href="./estilo/style_index.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-<body>
 
-	<header class="header">
-		
-		<h1 class="center"> Tienda Online </h1>
-		
-	</header>
-	
-	<br>
-	
-	<form action="comprovaciones-formularios/comprovacion-login.php" method="post" class="container">
-	
-		<div class="col-left">
-	
-			<div class="form-group">
-				<label>Correo</label>
-				<input type="correo" class="form-control" id="exampleInputEmail1" name="correo">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="./estilo/style_login.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body id="body-background">
+
+		<div class="card text-center">
+			<div class="card-body">
+				<h4 class="card-title">¡Conectame a BookMarket!</h4>
+
+				<form action="comprovaciones-formularios/comprovacion-login.php" method="post" class="container">
+
+					<div class="col-left">
+
+						<div class="form-group">
+							<label>Correo</label>
+							<input type="correo" class="form-control" id="exampleInputEmail1" name="correo">
+						</div>
+
+					</div>
+
+					<div class="col-right">
+
+						<div class="form-group">
+							<label>Contraseña</label>
+							<input type="password" class="form-control" id="exampleInputPassword1" name="passwd">
+						</div>
+
+					</div>
+
+					<p><button type="submit" class="btn btn-outline-info btn-block">Entrar</button></p>
+
+				</form>
+
 			</div>
-					
+			<div class="card-footer text-muted">
+				<span class="cuenta-creada">No tengo una cuenta (<a
+						href="./registro/registro-usuario.html">registrarme</a>)</span>
+			</div>
 		</div>
-	
-		<div class="col-right">
-	
-			<div class="form-group">
-				<label>Contraseña</label>
-				<input type="password" class="form-control" id="exampleInputPassword1" name="passwd">
-			</div>
-		
-		</div>		
-	
-		<p><button type="submit" class="btn btn-outline-info">Entrar</button><span class="cuenta-creada">No tengo una cuenta (<a href="./registro/registro-usuario.html">registrarme</a>)</span></p>
-		
-	</form>
-		
+	<br>
+
 	<footer>Aida Jesus Sora</footer>
-		
+
 </body>
+
 </html>

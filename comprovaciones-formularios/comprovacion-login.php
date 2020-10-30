@@ -36,8 +36,8 @@ $logueado=0;
 	
 	if($numero==0) {
 		
-		//echo "El usuario no existe";
-		header('Location: ./conectado/usuario_incorrecto.html');
+		echo "El usuario no existe";
+		//header('Location: ./conectado/usuario_incorrecto.html');
 
 		
 	} else {
@@ -53,16 +53,17 @@ $logueado=0;
 		
 			if ((!strcmp($password, $passwd) == 0) || $passwd=="") {
 
-				//echo "Contraseña incorrecta";
-				header('Location: ./conectado/contrasena_incorrecta.html');
+				echo "Contraseña incorrecta";
+				//header('Location: ./conectado/contrasena_incorrecta.html');
 
 			} else {
 
 				// Comprovar si el Usuario es Administrador
 
-				$_SESSION["nickname_logueado"]=$nickname;
+				$_SESSION["correo_logeado"]=$correo;
 				$logueado=1;
-				header('Location: ./conectado/conectado.html');
+				header('Location: ./../registrado/usuario-conectado.html');
+				//echo "Conectado";
 
 			}
 	}

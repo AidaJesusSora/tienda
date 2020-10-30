@@ -14,7 +14,6 @@ class dades {
 	public $passwd = null;
 	public $apellidos = null;
 	public $telefono = null;
-	public $user = false;
 		
 	/* Condiciones */ 
 	
@@ -256,7 +255,7 @@ class dades {
 				echo ("<br>Hay errores, vuelve a registrarte, gracias. <br>");
 				echo ("<span>");
 				echo ("Ya tengo una cuenta");
-				echo ("(<a href='./alta_usuario.html'>conectame</a>");
+				echo ("(<a href='index.html'>conectame</a>");
 				die ("</span>)");
 			}
 	
@@ -284,7 +283,7 @@ class dades {
 				
 			}
 
-			$consulta=mysqli_query($con,"insert into persona values ('$this->dni','$this->nombre','$this->edad','$this->correo','$this->nickname','$this->passwd','$this->apellidos','$this->telefono', '$this->user')");
+			$consulta=mysqli_query($con,"insert into usuario values ('$this->dni','$this->nombre','$this->edad','$this->correo','$this->nickname','$this->passwd','$this->apellidos','$this->telefono')");
 
 			if(!$consulta) {
 				
@@ -292,7 +291,7 @@ class dades {
 				
 			} else {
 				
-				header ("Location: ./registrado/usuari-registrat.html");
+				header ("Location: ./../registrado/usuario-conectado.html");
 				//echo "Datos insertados!";
 					
 			}
