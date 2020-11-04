@@ -36,8 +36,8 @@ $logueado=0;
 	
 	if($numero==0) {
 		
-		echo "El usuario no existe";
-		//header('Location: ./conectado/usuario_incorrecto.html');
+		//echo "El usuario no existe";
+		header('Location: ./../fallos/usuario_noregistrado.html');
 
 		
 	} else {
@@ -53,8 +53,8 @@ $logueado=0;
 		
 			if ((!strcmp($password, $passwd) == 0) || $passwd=="") {
 
-				echo "Contraseña incorrecta";
-				//header('Location: ./conectado/contrasena_incorrecta.html');
+				//echo "Contraseña incorrecta";
+				header('Location: ./../fallos/usuario_fallido.html');
 
 			} else {
 
