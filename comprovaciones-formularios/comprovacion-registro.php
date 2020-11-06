@@ -12,6 +12,7 @@ class dades {
 	public $correo = null;
 	public $nickname = null;
 	public $passwd = null;
+	public $passwd1 = null;
 	public $apellidos = null;
 	public $telefono = null;
 		
@@ -155,25 +156,36 @@ class dades {
 		public function getpasswd() {
 
 			return $this->passwd;
+			return $this->passwd1;
 		
 		}
 
-		public function setpasswd($passwd) {
+		public function setpasswd($passwd, $passwd1) {
 			
 			$this->passwd = $passwd;
+			$this->passwd1 = $passwd1;
 			
 		}
 
-		function validar_contrasena($passwd) {
+		function validar_contrasena($passwd, $passwd1) {
 
 			$this->passwd = $passwd;
-		
-			if (strlen($passwd) > 15 || strlen($passwd) < 9) {
+			$this->passwd1 = $passwd1;
 
-				echo("La contraseña tiene que estar entre 9 y 15 caracteres<br><br>");
-				$this->errores++;
+			if ($passwd==$passwd1) {
 
-			} 
+				if (strlen($passwd) > 15 || strlen($passwd) < 9) {
+
+					echo("La contraseña tiene que estar entre 9 y 15 caracteres<br><br>");
+					$this->errores++;
+	
+				} 
+
+			} else {
+
+				echo "Las contrasñas no son iguales";
+
+			}
 
 		}
 		

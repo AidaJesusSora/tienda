@@ -6,6 +6,7 @@ $logueado=0;
 
 	$password="";
 
+	$nickname = $_POST["nickname"];
 	$correo = $_POST["correo"];
 	$passwd = $_POST["passwd"];
 
@@ -27,45 +28,59 @@ $logueado=0;
 		echo "Se ha conectado a la base de datos" . "<br>";
 		
 	}
-	
-	$instruccion = "select count(*) as cuantos from usuario where correo = '$correo'";
+
+	$instruccion = "select count(*) as cuantos from usuario where nickname = '$nickname'";
 	$resultado = mysqli_query($con, $instruccion);
 		while ($fila = $resultado->fetch_assoc()) {
 			$numero=$fila["cuantos"];
-		}
+		} 
+		
+		if ($numero==0) {
+
+			//echo "El usuario no existe";
+			header('Location: ./../fallos/usuario_noregistrado.html');
+
+		} else {
 	
-	if($numero==0) {
+			$instruccion = "select count(*) as cuantos from usuario where correo = '$correo'";
+			$resultado = mysqli_query($con, $instruccion);
+
+				while ($fila = $resultado->fetch_assoc()) {
+					$numero=$fila["cuantos"];
+				}
+	
+				if($numero==0) {
+					
+					//echo "El usuario no existe";
+					header('Location: ./../fallos/usuario_noregistrado.html');
+				} else {
 		
-		//echo "El usuario no existe";
-		header('Location: ./../fallos/usuario_noregistrado.html');
+					$instruccion = "select passwd as cuantos from usuario where passwd = '$passwd'";
+					$resultado = mysqli_query($con, $instruccion);
+					
+						while ($fila = $resultado->fetch_assoc()) {
+							
+							$password=$fila["cuantos"];
+							
+						}
+					
+						if ((!strcmp($password, $passwd) == 0) || $passwd=="") {
 
-		
-	} else {
-		
-		$instruccion = "select passwd as cuantos from usuario where passwd = '$passwd'";
-		$resultado = mysqli_query($con, $instruccion);
-		
-			while ($fila = $resultado->fetch_assoc()) {
-				
-				$password=$fila["cuantos"];
-				
-			}
-		
-			if ((!strcmp($password, $passwd) == 0) || $passwd=="") {
+							//echo "Contraseña incorrecta";
+							header('Location: ./../fallos/usuario_fallido.html');
 
-				//echo "Contraseña incorrecta";
-				header('Location: ./../fallos/usuario_fallido.html');
+						} else {
 
-			} else {
+							// Comprovar si el Usuario es Administrador
 
-				// Comprovar si el Usuario es Administrador
+							$_SESSION["correo_logeado"]=$correo;
+							$logueado=1;
+							header('Location: ./../registrado/usuario-conectado.html');
+							//echo "Conectado";
 
-				$_SESSION["correo_logeado"]=$correo;
-				$logueado=1;
-				header('Location: ./../registrado/usuario-conectado.html');
-				//echo "Conectado";
-
-			}
-	}
+						}
+					}
+		}	
+	
 	
 ?>
