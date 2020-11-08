@@ -29,7 +29,7 @@ $logueado=0;
 		
 	}
 
-	$instruccion = "select count(*) as cuantos from usuario where nickname = '$nickname'";
+	$instruccion = "select count(*) as cuantos from usuarios where nickname = '$nickname'";
 	$resultado = mysqli_query($con, $instruccion);
 		while ($fila = $resultado->fetch_assoc()) {
 			$numero=$fila["cuantos"];
@@ -42,7 +42,7 @@ $logueado=0;
 
 		} else {
 	
-			$instruccion = "select count(*) as cuantos from usuario where correo = '$correo'";
+			$instruccion = "select count(*) as cuantos from usuarios where correo = '$correo'";
 			$resultado = mysqli_query($con, $instruccion);
 
 				while ($fila = $resultado->fetch_assoc()) {
@@ -55,7 +55,7 @@ $logueado=0;
 					header('Location: ./../fallos/usuario_noregistrado.html');
 				} else {
 		
-					$instruccion = "select passwd as cuantos from usuario where passwd = '$passwd'";
+					$instruccion = "select passwd as cuantos from usuarios where passwd = '$passwd'";
 					$resultado = mysqli_query($con, $instruccion);
 					
 						while ($fila = $resultado->fetch_assoc()) {
@@ -75,7 +75,17 @@ $logueado=0;
 
 							$_SESSION["correo_logeado"]=$correo;
 							$logueado=1;
-							header('Location: ./../registrado/usuario-conectado.html');
+
+							if ($usuario === true) {
+
+								header ("Location: ./../registrado/usuario-conectado.html");
+
+							} else {
+
+								header ("Location: ./../administrador/usuario-administrador.html");
+
+							}
+
 							//echo "Conectado";
 
 						}

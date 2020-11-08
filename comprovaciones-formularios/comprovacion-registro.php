@@ -15,7 +15,10 @@ class dades {
 	public $passwd1 = null;
 	public $apellidos = null;
 	public $telefono = null;
-		
+	public $usuario = true; // True = Usuario Normal - False = Administrador
+	public $consulta_db_duo;
+	public $conect_my_db;
+
 	/* Condiciones */ 
 	
 		/*DNI*/
@@ -172,18 +175,34 @@ class dades {
 			$this->passwd = $passwd;
 			$this->passwd1 = $passwd1;
 
-			if ($passwd==$passwd1) {
+			if (strlen($passwd) > 15 || strlen($passwd) < 9) {
 
-				if (strlen($passwd) > 15 || strlen($passwd) < 9) {
+				echo("La contraseña tiene que estar entre 9 y 15 caracteres<br><br>");
+				$this->errores++;
 
-					echo("La contraseña tiene que estar entre 9 y 15 caracteres<br><br>");
-					$this->errores++;
+				if ($passwd === $passwd1) {
+
+					echo "Las contraseñas son iguales";
 	
-				} 
+				} else {
+	
+					echo "Las contraseñas no son iguales";
+					//$this->errores++;
+	
+				}
 
 			} else {
 
-				echo "Las contrasñas no son iguales";
+				if ($passwd === $passwd1) {
+
+					echo "Las contraseñas son iguales";
+	
+				} else {
+	
+					echo "Las contraseñas no son iguales";
+					$this->errores++;
+
+				}
 
 			}
 
@@ -257,23 +276,13 @@ class dades {
 			$this->user = $user;
 
 		}
-
-	//Parámetros de conexión
-	
-		function verificar_errores() {
-			
-			if ($this->errores != 0) {
-
-				echo ("<br>Hay errores, vuelve a registrarte, gracias. <br>");
-				echo ("<span>");
-				echo ("Ya tengo una cuenta");
-				echo ("(<a href='index.html'>conectame</a>");
-				die ("</span>)");
-			}
-	
-		}
+		
+		//Parámetros de conexión
 	
 		function llamar_bbdd() {
+
+			$nickname = $_POST["nickname"];
+			$correo = $_POST["correo"];
 
 			$servidor="localhost";
 			$usuario="root";
@@ -295,7 +304,70 @@ class dades {
 				
 			}
 
-			$consulta=mysqli_query($con,"insert into usuario values ('$this->dni','$this->nombre','$this->edad','$this->correo','$this->nickname','$this->passwd','$this->apellidos','$this->telefono')");
+			$instruccion = "select count(*) as cuantos from usuarios where nickname = '$nickname'";
+			$resultado = mysqli_query($con, $instruccion);
+				while ($fila = $resultado->fetch_assoc()) {
+					$numero=$fila["cuantos"];
+				} 
+				
+				if ($numero>=1) {
+
+					echo "El usuario existe";
+					$this->errores++;
+					//header('Location: ./../fallos/usuario_noregistrado.html');
+
+				}
+
+			$instruccion = "select count(*) as cuantos from usuarios where correo = '$correo'";
+			$resultado = mysqli_query($con, $instruccion);
+				while ($fila = $resultado->fetch_assoc()) {
+					$numero=$fila["cuantos"];
+				} 
+				
+				if ($numero>=1) {
+
+					echo "El correo existe";
+					$this->errores++;
+					//header('Location: ./../fallos/usuario_noregistrado.html');
+
+				}
+
+		}
+
+		function verificar_errores() {
+		
+			if ($this->errores != 0) {
+
+				header ('Location: ./../fallos/registro_fallido.html');
+
+			}
+	
+		}
+
+		function llamar_bbdd_2() {
+
+			$servidor="localhost";
+			$usuario="root";
+			$contraseña="";
+			$bd="test";
+
+			//Realizamos la conexión
+			
+			$con=mysqli_connect($servidor,$usuario,$contraseña,$bd);
+			if(!$con) {
+				
+				die("Con se ha podido realizar la conexión: ". mysqli_connect_error() . "<br>");
+				
+			} else {
+				
+				mysqli_set_charset($con,"utf8");
+				echo "Te has conectado a la BBDD<br>";
+				$_SESSION["con"]=$con;
+				
+			}
+
+
+			$consulta=mysqli_query($con,"insert into usuarios values ('$this->dni','$this->nombre','$this->edad','$this->correo','$this->nickname','$this->passwd','$this->apellidos','$this->telefono','$this->passwd1','$this->usuario')");
 
 			if(!$consulta) {
 				
