@@ -11,12 +11,13 @@ $logueado=0;
 	$passwd = $_POST["passwd"];
 
 	$servidor="localhost";
-	$usuario="root";
+	$usuario_bd="root";
 	$contrasena="";
 	$bd="test";
 
+
 	//Realizamos la conexión
-	$con=mysqli_connect($servidor,$usuario,$contrasena,$bd);
+	$con=mysqli_connect($servidor,$usuario_bd,$contrasena,$bd);
 	
 	if (!$con) {
 		
@@ -71,12 +72,19 @@ $logueado=0;
 
 						} else {
 
-							// Comprovar si el Usuario es Administrador
+							$instruccion = "select usuario as cuantos from usuarios where usuario = '$usuario'";
+							$resultado = mysqli_query($con, $instruccion);
+
+							while ($fila = $resultado->fetch_assoc()) {
+							
+								$usuario=$fila["cuantos"];
+								
+							}
 
 							$_SESSION["correo_logeado"]=$correo;
 							$logueado=1;
 
-							if ($usuario === true) {
+							if ($usuario != 0) {
 
 								header ("Location: ./../registrado/usuario-conectado.html");
 
