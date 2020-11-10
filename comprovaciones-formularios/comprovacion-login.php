@@ -9,6 +9,7 @@ $logueado=0;
 	$nickname = $_POST["nickname"];
 	$correo = $_POST["correo"];
 	$passwd = $_POST["passwd"];
+	$usuario = "";
 
 	$servidor="localhost";
 	$usuario_bd="root";
@@ -72,27 +73,25 @@ $logueado=0;
 
 						} else {
 
-							$instruccion = "select usuario as cuantos from usuarios where usuario = '$usuario'";
+							$instruccion = "select usuario as cuantos from usuarios where correo = '$correo'";
 							$resultado = mysqli_query($con, $instruccion);
-
-							while ($fila = $resultado->fetch_assoc()) {
 							
-								$usuario=$fila["cuantos"];
-								
-							}
+								while ($fila = $resultado->fetch_assoc()) {
+									
+									$usuario=$fila["cuantos"];
+									
+								}
 
-							$_SESSION["correo_logeado"]=$correo;
-							$logueado=1;
-
-							if ($usuario != 0) {
-
-								header ("Location: ./../registrado/usuario-conectado.html");
-
-							} else {
+							if ($usuario === 0) {
 
 								header ("Location: ./../administrador/usuario-administrador.html");
 
 							}
+							// else {
+
+							// 	header ("Location: ./../registrado/usuario-conectado.html");
+
+							// }
 
 							//echo "Conectado";
 

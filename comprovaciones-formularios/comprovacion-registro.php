@@ -15,7 +15,7 @@ class dades {
 	public $passwd1 = null;
 	public $apellidos = null;
 	public $telefono = null;
-	public $usuario = true; // True = Usuario Normal - False = Administrador
+	public $usuario = false; // False = Usuario Normal - True = Administrador
 	public $consulta_db_duo;
 	public $conect_my_db;
 
@@ -285,13 +285,13 @@ class dades {
 			$correo = $_POST["correo"];
 
 			$servidor="localhost";
-			$usuario="root";
+			$usuario_bd="root";
 			$contraseña="";
 			$bd="test";
 
 			//Realizamos la conexión
 			
-			$con=mysqli_connect($servidor,$usuario,$contraseña,$bd);
+			$con=mysqli_connect($servidor,$usuario_bd,$contraseña,$bd);
 			if(!$con) {
 				
 				die("Con se ha podido realizar la conexión: ". mysqli_connect_error() . "<br>");
@@ -347,13 +347,13 @@ class dades {
 		function llamar_bbdd_2() {
 
 			$servidor="localhost";
-			$usuario="root";
+			$usuario_bd="root";
 			$contraseña="";
 			$bd="test";
 
 			//Realizamos la conexión
 			
-			$con=mysqli_connect($servidor,$usuario,$contraseña,$bd);
+			$con=mysqli_connect($servidor,$usuario_bd,$contraseña,$bd);
 			if(!$con) {
 				
 				die("Con se ha podido realizar la conexión: ". mysqli_connect_error() . "<br>");
