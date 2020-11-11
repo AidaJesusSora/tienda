@@ -1,4 +1,5 @@
 function funcionAlerta(){
-    alert("Los datos han sido enviados o lo que quieras");
-    
+    if (window.confirm("Do you really want to leave?")) { 
+        window.open("exit.html", "Thanks for Visiting!");
+      }    
 }
