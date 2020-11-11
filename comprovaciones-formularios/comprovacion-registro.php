@@ -310,27 +310,29 @@ class dades {
 					$numero=$fila["cuantos"];
 				} 
 				
-				if ($numero>=1) {
+				if ($numero !=0) {
 
-					echo "El usuario existe";
+					//echo "El usuario existe";
 					$this->errores++;
 					//header('Location: ./../fallos/usuario_noregistrado.html');
 
+				} else {
+
+					$instruccion = "select count(*) as cuantos from usuarios where correo = '$correo'";
+					$resultado = mysqli_query($con, $instruccion);
+						while ($fila = $resultado->fetch_assoc()) {
+							$numero=$fila["cuantos"];
+						} 
+						
+						if ($numero>=1) {
+
+							//echo "El correo existe";
+							$this->errores++;
+							//header('Location: ./../fallos/usuario_noregistrado.html');
+
+						}
 				}
 
-			$instruccion = "select count(*) as cuantos from usuarios where correo = '$correo'";
-			$resultado = mysqli_query($con, $instruccion);
-				while ($fila = $resultado->fetch_assoc()) {
-					$numero=$fila["cuantos"];
-				} 
-				
-				if ($numero>=1) {
-
-					echo "El correo existe";
-					$this->errores++;
-					//header('Location: ./../fallos/usuario_noregistrado.html');
-
-				}
 
 		}
 
@@ -340,11 +342,7 @@ class dades {
 
 				header ('Location: ./../fallos/registro_fallido.html');
 
-			}
-	
-		}
-
-		function llamar_bbdd_2() {
+			} else {
 
 			$servidor="localhost";
 			$usuario_bd="root";
@@ -375,12 +373,14 @@ class dades {
 				
 			} else {
 				
-				header ("Location: ./../registrado/usuario-conectado.html");
+				header ("Location: ./../index.html");
 				//echo "Datos insertados!";
 					
 			}
 
 		}
+
+	}
 
 }
 	

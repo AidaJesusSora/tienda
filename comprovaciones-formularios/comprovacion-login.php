@@ -73,6 +73,8 @@ $logueado=0;
 
 						} else {
 
+							echo "patata:";
+
 							$instruccion = "select usuario as cuantos from usuarios where correo = '$correo'";
 							$resultado = mysqli_query($con, $instruccion);
 							
@@ -82,16 +84,19 @@ $logueado=0;
 									
 								}
 
-							if ($usuario === 0) {
+								echo "adeu:";
 
+
+							if ($usuario != 0) {
+
+								echo "hola:";
 								header ("Location: ./../administrador/usuario-administrador.html");
 
+							} else {
+
+								header ("Location: ./../registrado/usuario-conectado.html");
+
 							}
-							// else {
-
-							// 	header ("Location: ./../registrado/usuario-conectado.html");
-
-							// }
 
 							//echo "Conectado";
 

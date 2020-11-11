@@ -5,6 +5,14 @@
 	<link href="../estilo/style_interior_web.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+		<!-- <script type="text/javascript">
+			alert("Hola Mundo!");
+		</script> -->
+
+		<script type="text/javascript" src="./../desconexion/desconexion.js"> </script>
+
 </head>
 
 <body>
@@ -20,12 +28,30 @@
 		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 			<div class="navbar-nav">
 				<a class="nav-link" href="./../libros/libros.html">Libros</a>
-				<a class="nav-link" href="./../editoriales/editoriales.html">Editoriales</a>
-				<a class="nav-link" href="./../tipo-libro/tipo-libro.html">Tipo Libro</a>
-				<a class="nav-link" href="./../categoria/categoria-libro.html">Categoria</a>
+				<a class="nav-link" href="./../editoriales/editoriales.html">Carrito</a>
+				<a class="nav-link" href="./../tipo-libro/tipo-libro.html">Mi cuenta</a>
+				<a class="nav-link" type="button" data-toggle="modal" data-target="#desconexion" onclick="funcionAlerta()" >Log out</a>
 
-				<a class="nav-link" href="#">Mi cuenta</a>
-				<span class="glyphicon glyphicon-shopping-cart"><a class="nav-link" href="#"></a></span>
+				<div class="modal fade" id="desconexion" tabindex="-1" role="dialog" aria-labelledby="desconexionTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+					  <div class="modal-content">
+						<div class="modal-header">
+						  <h5 class="modal-title" id="desconexionTitle">Modal title</h5>
+						  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						  </button>
+						</div>
+						<div class="modal-body">
+						  ...
+						</div>
+						<div class="modal-footer">
+						  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						  <button type="button" class="btn btn-primary">Save changes</button>
+						</div>
+					  </div>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</nav>
