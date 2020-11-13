@@ -1,0 +1,126 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="../../estilo/style_interior_web.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script type="text/javascript" src="../../js/java-script.js"> </script>
+
+</head>
+
+<body>
+	<header class="header">
+
+		<h1 class="h1"> BookMarket </h1>
+
+	</header>
+
+	<nav class="navbar navbar-expand-lg navbar-expand-sm navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">BookMarket</a>
+		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			<div class="navbar-nav">
+				<a class="nav-link" href="../../libros/libros-administrador.php">Libros</a>
+				<a class="nav-link" href="../../usuarios/usuarios-administrador.html">Usuarios</a>
+				<a class="nav-link" href="../../carrito/carrito.html">Carrito</a>
+				<a class="nav-link" href="../../cuenta/cuenta-usuario.html">Mi cuenta</a>
+				<a class="nav-link" type="button" data-toggle="modal" data-target="#desconexion"
+					onclick="funcionAlerta()">Log out</a>
+			</div>
+		</div>
+	</nav>
+
+	<br>
+
+	<h2 class="text-center">- AÑADIR PRODUCTO -</h2>
+
+	<br>
+
+	<form action="principal_libro.php" method="post" class="container">
+
+		<div class="form-group">
+			<label>Titulo del Libro</label>
+			<input type="text" class="form-control" name="titulo">
+		</div>
+
+		<div class="col-left">
+
+			<div class="form-group">
+				<label>Autor del Libro</label>
+				<input type="text" class="form-control" name="autor">
+			</div>
+
+			<div class="form-group">
+				<label>Fecha de Publicacion</label>
+				<input type="date" class="form-control" name="publicacion">
+			</div>
+
+			<div class="form-group">
+				<label>Numero de Edicion</label>
+				<input type="number" class="form-control" name="edicion">
+			</div>
+
+			<div class="form-group">
+				<label>Precio</label>
+				<input type="number" step="any" class="form-control" name="precio">
+			</div>
+
+		</div>
+
+		<div class="col-right">
+
+			<div class="form-group">
+				<label>Genero del Libro</label>
+				<select class="form-control" name="genero">
+					<option value="Terror/Suspense" selected>Terror/Suspense</option>
+					<option value="Teatro">Teatro</option>
+					<option value="Drama">Drama</option>
+					<option value="Ciencia Ficcion">Ciencia Ficcion</option>
+					<option value="Negra">Negra</option>
+					<option value="Ficción Historica">Ficción Historica</option>
+					<option value="Aventuras">Aventuras</option>
+					<option value="Fantasía">Fantasía</option>
+					<option value="Relatos">Relatos</option>
+					<option value="Romance">Romance</option>
+					<option value="Eroticos">Eroticos</option>
+					<option value="Humor">Humor</option>
+					<option value="Infantil">Infantil</option>
+					<option value="Otros">Otros...</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label>Numero de Paginas</label>
+				<input type="numero" class="form-control" name="paginas" id="paginas">
+			</div>
+
+			<div class="form-group">
+				<label>Tipo de Libro</label>
+				<select class="form-control" name="tipo">
+					<option value="Bolsillo">Bolsillo</option>
+					<option value="Tapa Blanda">Tapa Blanda</option>
+					<option value="Tapa Dura">Tapa Dura</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label>Editorial</label>
+				<select class="form-control" name="editorial">
+					<option value="Alfaguara">Alfaguara</option>
+					<option value="Penguin Random House">Penguin Random House</option>
+					<option value="Edebé">Édebe</option>
+					<option value="Empúries">Editorial Empúries</option>
+					<option value="Planeta">Editorial Planeta</option>
+					<option value="Salamandra">Editorial Salamandra</option>
+				</select>
+			</div>
+
+		</div>
+
+		<button type="submit" class="btn btn-outline-info">Entrar</button>
+
+	</form>
+
+</body>
+
+</html>
