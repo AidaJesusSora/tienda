@@ -52,7 +52,7 @@
 			mysqli_set_charset($con, "utf8");
 		}
 
-		echo "<table class='table table-striped'>";
+		echo "<table class='table table-striped ml-5 mr-5'>";
 		$instruccion = "SELECT * FROM libros WHERE 1";
 		$resultado = mysqli_query($con, $instruccion);
 
@@ -66,8 +66,8 @@
 		echo "<td> Paginas </td>";
 		echo "<td> Libros </td>";
 		echo "<td> Editorial</td>";
-		echo "<td></td>";
-		echo "<td></td>";
+		echo "<td> Modificar </td>";
+		echo "<td> Borrar </td>";
 		echo "</tr>";
 
 		while ($fila = $resultado->fetch_assoc()) {
@@ -92,8 +92,8 @@
 			echo "<td>" . $paginas . "</td>";
 			echo "<td>" . $tipo . "</td>";
 			echo "<td>" . $editorial . "</td>";
-			echo "<td><i class='far fa-trash-alt'></i></td>";
-			echo "<td></td>";
+			echo "<td><a class='far fa-edit btn'></a></td>";
+			echo "<td><a class='far fa-trash-alt btn' href='./principal.php'></a></td>";
 			echo "</tr>";
 		}
 

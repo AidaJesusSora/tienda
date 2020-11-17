@@ -16,8 +16,6 @@ class dades {
 	public $apellidos = null;
 	public $telefono = null;
 	public $usuario = false; // False = Usuario Normal - True = Administrador
-	public $consulta_db_duo;
-	public $conect_my_db;
 
 	/* Condiciones */ 
 	
@@ -276,7 +274,8 @@ class dades {
 			$this->user = $user;
 
 		}
-		
+
+
 		//Parámetros de conexión
 	
 		function llamar_bbdd() {

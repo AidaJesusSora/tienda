@@ -230,6 +230,21 @@ class books {
 		$this->editorial = $editorial;
 
 	}
+
+	/* Usuario */
+
+	public function getid($id) {
+
+		$this->id = $id;
+
+	}
+
+	public function setid($id) {
+
+		$this->id = $id;
+
+	}
+	
 	
 	//Parámetros de conexión
 
@@ -269,7 +284,7 @@ class books {
 				
 			}
 
-		$consulta=mysqli_query($con,"insert into libros values ('$this->titulo','$this->autor','$this->genero','$this->editorial','$this->precio','$this->publicacion','$this->paginas','$this->edicion','$this->tipo')");
+		$consulta=mysqli_query($con,"insert into libros values ('$this->titulo','$this->autor','$this->genero','$this->editorial','$this->precio','$this->publicacion','$this->paginas','$this->edicion','$this->tipo', '$this->id')");
 
 			if(!$consulta) {
 				
