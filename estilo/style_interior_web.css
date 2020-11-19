@@ -28,6 +28,12 @@
     text-transform: capitalize;
 }
 
+#sec-random {
+    background-color: #d5d5de;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
 /* footer {
     background-color: black;
     color: white;

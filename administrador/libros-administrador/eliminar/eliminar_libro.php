@@ -8,7 +8,7 @@ class eliminar_books {
 	
 	//Parámetros de conexión
 
-	function llamar_bbdd() {
+	function llamar_bbdd($id) {
 
 		$servidor="localhost";
 		$usuario_bd="root";
@@ -30,7 +30,7 @@ class eliminar_books {
 				
 			}
 
-		$sql = "delete from libros where id='$this->id'";
+		$sql = "delete from libros where id='$id'";
 		mysqli_query($con, $sql);
 
 			if(!$sql) {
