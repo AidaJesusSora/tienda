@@ -117,7 +117,7 @@ class dades {
 			
 		}
 		
-			// Falta Validacion
+		// Falta Validacion
 
 		function validar_correo($correo) {
 
@@ -150,6 +150,7 @@ class dades {
 				$this->errores++;
 
 			}
+
 		}
 
 		/*Contraseña*/
@@ -185,7 +186,6 @@ class dades {
 				} else {
 	
 					echo "Las contraseñas no son iguales";
-					//$this->errores++;
 	
 				}
 
@@ -275,6 +275,19 @@ class dades {
 
 		}
 
+		/* ID */
+
+		public function getid($id) {
+
+			$this->id = $id;
+	
+		}
+	
+		public function setid($id) {
+	
+			$this->id = $id;
+	
+		}
 
 		//Parámetros de conexión
 	
@@ -311,23 +324,20 @@ class dades {
 				
 				if ($numero !=0) {
 
-					//echo "El usuario existe";
 					$this->errores++;
-					//header('Location: ./../fallos/usuario_noregistrado.html');
 
 				} else {
 
 					$instruccion = "select count(*) as cuantos from usuarios where correo = '$correo'";
 					$resultado = mysqli_query($con, $instruccion);
+
 						while ($fila = $resultado->fetch_assoc()) {
 							$numero=$fila["cuantos"];
 						} 
 						
 						if ($numero>=1) {
 
-							//echo "El correo existe";
 							$this->errores++;
-							//header('Location: ./../fallos/usuario_noregistrado.html');
 
 						}
 				}
@@ -363,8 +373,7 @@ class dades {
 				
 			}
 
-
-			$consulta=mysqli_query($con,"insert into usuarios values ('$this->dni','$this->nombre','$this->edad','$this->correo','$this->nickname','$this->passwd','$this->apellidos','$this->telefono','$this->passwd1','$this->usuario')");
+			$consulta=mysqli_query($con,"insert into usuarios values ('$this->id','$this->dni','$this->nombre','$this->edad','$this->correo','$this->nickname','$this->passwd','$this->apellidos','$this->telefono','$this->passwd1','$this->usuario')");
 
 			if(!$consulta) {
 				
@@ -373,7 +382,6 @@ class dades {
 			} else {
 				
 				header ("Location: ./../index.html");
-				//echo "Datos insertados!";
 					
 			}
 

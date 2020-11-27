@@ -22,7 +22,9 @@ class eliminar_books {
 				
 				die("Con se ha podido realizar la conexión: ". mysqli_connect_error() . "<br>");
 				
-			} else {
+			} 
+			
+			else {
 				
 				mysqli_set_charset($con,"utf8");
 				echo "Te has conectado a la BBDD<br>";
@@ -30,18 +32,18 @@ class eliminar_books {
 				
 			}
 
-		$sql = "delete from libros where id='$id'";
-		mysqli_query($con, $sql);
+		$sql = "DELETE from libros where id='$id'";
+		$con->query($sql) or die ("Error".mysqli_error($con));
 
-			if(!$sql) {
+		if(!$sql) {
+			
+			die("Algo ha fallado");
 				
-				die("Algo ha fallado");
-				 
-			} else {
-				
-				header ("Location: ./libros-administrador.php");
-								
-			}
+		} else {
+			
+			header ("Location: ./../libros-administrador.php");
+							
+		}
 			
 	}
 

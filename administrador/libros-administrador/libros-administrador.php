@@ -18,19 +18,17 @@
 	</header>
 
 	<nav class="navbar navbar-expand-lg navbar-expand-sm navbar-dark bg-dark">
-		<a class="navbar-brand" href="#">BookMarket</a>
+		<a class="navbar-brand" href="./../usuario-administrador.html">BookMarket</a>
 		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 			<div class="navbar-nav">
 				<a class="nav-link" href="#">Libros</a>
 				<a class="nav-link" href="./../usuarios-administrador/usuarios-administrador.php">Usuarios</a>
-				<a class="nav-link" href="./../../cuenta/cuenta-usuario.html">Mi cuenta</a>
 				<a class="nav-link" type="button" data-toggle="modal" data-target="#desconexion" onclick="funcionAlerta()">Log out</a>
 			</div>
 		</div>
 	</nav>
 
 	<br>
-
 
 	<div class="row ">
 
@@ -41,7 +39,6 @@
 		$usuario_bd = "root";
 		$contrasena = "";
 		$bd = "test";
-		$contador=1;
 
 		// realizamos la conexión
 		$con = mysqli_connect($servidor, $usuario_bd, $contrasena, $bd);
@@ -73,6 +70,7 @@
 
 		while ($fila = $resultado->fetch_assoc()) {
 
+			$id = $fila["id"];
 			$titulo = $fila["titulo"];
 			$autor = $fila["autor"];
 			$publicacion = $fila["publicacion"];
@@ -94,9 +92,9 @@
 			echo "<td>" . $tipo . "</td>";
 			echo "<td>" . $editorial . "</td>";
 			echo "<td><a class='far fa-edit btn'></a></td>";
-			echo "<td><button class='far fa-trash-alt btn'></button></td>";
+			echo "<td><a class='far fa-trash-alt btn' href='./eliminar/principal.php'></a></td>";
 			echo "</tr>";
-			$contador++;
+
 		}
 
 		echo "</table>";
@@ -108,5 +106,7 @@
 	</div>
 
 </body>
+
+<footer class="mt-4"> Aida Jesus Sora </footer>
 
 </html>

@@ -39,7 +39,7 @@ $logueado=0;
 		
 		if ($numero==0) {
 
-			//echo "El usuario no existe";
+			// Usuario no registrado
 			header('Location: ./../fallos/usuario_noregistrado.html');
 
 		} else {
@@ -52,9 +52,10 @@ $logueado=0;
 				}
 	
 				if($numero==0) {
-					
-					//echo "El usuario no existe";
+
+					// Usuario no registrado					
 					header('Location: ./../fallos/usuario_noregistrado.html');
+
 				} else {
 		
 					$instruccion = "select passwd as cuantos from usuarios where passwd = '$passwd'";
@@ -68,7 +69,7 @@ $logueado=0;
 					
 						if ((!strcmp($password, $passwd) == 0) || $passwd=="") {
 
-							//echo "Contraseña incorrecta";
+							// Usuario fallido
 							header('Location: ./../fallos/usuario_fallido.html');
 
 						} else {
@@ -89,20 +90,20 @@ $logueado=0;
 
 							if ($usuario != 0) {
 
-								echo "hola:";
+								// Conexion del administrador
 								header ("Location: ./../administrador/usuario-administrador.html");
 
 							} else {
 
+								// Conexion del usuario normal
 								header ("Location: ./../registrado/usuario-conectado.html");
 
 							}
 
-							//echo "Conectado";
-
 						}
+
 					}
+
 		}	
-	
 	
 ?>

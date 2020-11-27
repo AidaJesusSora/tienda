@@ -1,6 +1,6 @@
 <?php
 
-class eliminar_books {
+class modificar_books {
 
 	//Parámetros que vienen del POST
 
@@ -8,7 +8,7 @@ class eliminar_books {
 	
 	//Parámetros de conexión
 
-	function llamar_bbdd() {
+	function llamar_bbdd($id) {
 
 		$servidor="localhost";
 		$usuario_bd="root";
@@ -22,7 +22,9 @@ class eliminar_books {
 				
 				die("Con se ha podido realizar la conexión: ". mysqli_connect_error() . "<br>");
 				
-			} else {
+			} 
+			
+			else {
 				
 				mysqli_set_charset($con,"utf8");
 				echo "Te has conectado a la BBDD<br>";
@@ -30,24 +32,18 @@ class eliminar_books {
 				
 			}
 
-		$instruccion = "select id as cuantos from usuarios where id = '$this->id'";
-		$resultado = mysqli_query($con, $instruccion);
-			while ($fila = $resultado->fetch_assoc()) {
-				$numero=$fila["cuantos"];
-			}
+		$sql = "DELETE from libros where id='$id'";
+		$con->query($sql) or die ("Error".mysqli_error($con));
 
-		$sql = "delete from libros where id='$this->id'";
-		mysqli_query($con, $sql);
-
-			if(!$sql) {
+		if(!$sql) {
+			
+			die("Algo ha fallado");
 				
-				die("Algo ha fallado");
-				 
-			} else {
-				
-				header ("Location: ./libros-administrador.php");
-								
-			}
+		} else {
+			
+			header ("Location: ./../libros-administrador.php");
+							
+		}
 			
 	}
 

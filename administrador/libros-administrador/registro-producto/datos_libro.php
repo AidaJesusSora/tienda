@@ -231,7 +231,7 @@ class books {
 
 	}
 
-	/* Usuario */
+	/* ID */
 
 	public function getid($id) {
 
