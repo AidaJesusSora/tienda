@@ -70,7 +70,6 @@
 		echo "<td> Telefono </td>";
 		echo "<td> Nickname </td>";
 		echo "<td> Correo </td>";
-		echo "<td> Contraseña </td>";
 		echo "<td> Modificar </td>";
 		echo "<td> Eliminar </td>";
 		
@@ -85,7 +84,6 @@
 			$telefono = $fila["telefono"];
 			$nickname = $fila["nickname"];
 			$correo = $fila["correo"];
-			$passwd = $fila["passwd"];
 
 			echo "<tr>";
 			echo "<td>" . $id . "</td>";
@@ -95,8 +93,7 @@
 			echo "<td>" . $telefono . "</td>";
 			echo "<td>" . $nickname . "</td>";
 			echo "<td>" . $correo . "</td>";
-			echo "<td>" . $passwd . "</td>";
-			echo "<td><a class='far fa-edit btn'></a></td>";
+			echo "<td><a class='far fa-edit btn' href='./modificar/principal.php?id=$id'></a></td>";
 			echo "<td><a class='far fa-trash-alt btn' href='./eliminar/principal.php'></a></td>";
 			echo "</tr>";
 		}

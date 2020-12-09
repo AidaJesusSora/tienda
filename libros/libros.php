@@ -2,7 +2,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link href="./../../estilo/style_interior_web.css" rel="stylesheet" type="text/css">
+	<link href="./../estilo/style_interior_web.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 	<script type="text/javascript" src="./../../js/java-script.js"> </script>
@@ -18,11 +18,10 @@
 	</header>
 
 	<nav class="navbar navbar-expand-lg navbar-expand-sm navbar-dark bg-dark">
-		<a class="navbar-brand" href="./../usuario-administrador.html">BookMarket</a>
+		<a class="navbar-brand" href="./../registrado/usuario-conectado.html">BookMarket</a>
 		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 			<div class="navbar-nav">
-				<a class="nav-link" href="./libros-administrador.php">Libros</a>
-				<a class="nav-link" href="./../usuarios-administrador/usuarios-administrador.php">Usuarios</a>
+				<a class="nav-link" href="#">Libros</a>
 				<a class="nav-link" type="button" data-toggle="modal" data-target="#desconexion" onclick="funcionAlerta()">Log out</a>
 			</div>
 		</div>
@@ -64,8 +63,7 @@
 		echo "<td> Paginas </td>";
 		echo "<td> Libros </td>";
 		echo "<td> Editorial</td>";
-		echo "<td> Modificar </td>";
-		echo "<td> Borrar </td>";
+		echo "<td> Carrito </td>";
 		echo "</tr>";
 
 		while ($fila = $resultado->fetch_assoc()) {
@@ -91,18 +89,15 @@
 			echo "<td>" . $paginas . "</td>";
 			echo "<td>" . $tipo . "</td>";
 			echo "<td>" . $editorial . "</td>";
-			echo "<td><a class='far fa-edit btn' href='./modificar/principal.php?id=$id' ></a></td>";
-			echo "<td><a class='far fa-trash-alt btn' href='./eliminar/principal.php'></a></td>";
+			echo "<td><a class='fas fa-shopping-cart btn' href='./carrito/principal.php?id=$id' ></a></td>";
 			echo "</tr>";
 
 		}
 
 		echo "</table>";
 
-		?>
-
-		<a class="btn btn-outline-info btn-group-lg btn-block container" href="./registro-producto/alta_libro.html" role="button">Registrar un libro</a>
-
+        ?>
+        
 	</div>
 
 </body>

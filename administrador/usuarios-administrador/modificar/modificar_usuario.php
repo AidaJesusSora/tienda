@@ -1,23 +1,20 @@
 <?php
 
-class modificar_books_bbdd {
+class modificar_usuario_bbdd {
 
 	//Parámetros que vienen del POST
 
 	public $id = null;
-	public $titulo = null;
-	public $autor = null;
-	public $publicacion = null;
-	public $edicion = null;
-	public $precio = null;
-	public $genero = null;
-	public $paginas = null;
-	public $tipo = null;
-	public $editorial = null;
-	
+	public $nombre = null;
+	public $apellidos = null;
+	public $edad = null;
+	public $telefono = null;
+	public $nickname = null;
+	public $correo = null;
+
 	//Parámetros de conexión
 
-	function llamar_bbdd($titulo, $autor, $publicacion, $edicion, $editorial, $precio, $tipo, $genero, $paginas, $id) {
+	function llamar_bbdd($dni, $nombre, $apellidos, $edad, $telefono, $nickname, $correo, $id) {
 
 		$servidor="localhost";
 		$usuario_bd="root";
@@ -41,7 +38,7 @@ class modificar_books_bbdd {
 				
 			}
 
-		$sql = "UPDATE libros SET titulo='$titulo', autor='$autor', genero='$genero', editorial='$editorial', precio='$precio', publicacion='$publicacion', paginas='$paginas', edicion='$edicion', tipo='$tipo'where id='$id'";
+		$sql = "UPDATE usuarios SET dni='$dni', nombre='$nombre', apellidos='$apellidos', edad='$edad', telefono='$telefono', nickname='$nickname', correo='$correo' where id='$id'";
 		$con->query($sql) or die ("Error".mysqli_error($con));
 
 		$consulta=mysqli_query($con, $sql);
@@ -52,7 +49,7 @@ class modificar_books_bbdd {
 				 
 			} else {
 				
-				header ("Location: ../libros-administrador.php");
+				header ("Location: ../usuarios-administrador.php");
 								
 			}
 			
