@@ -31,7 +31,7 @@
 
 	<?php
 
-	$seleccion = null;
+	$seleccion = 0;
 
 	echo"<div class='row container'>
 
@@ -39,7 +39,7 @@
 	
 		<select  class='form-control container' name='seleccion'>
 
-			<option value='0' selected>---</option>
+			<option value='0'>---</option>
 			<option value='1'>Ordenar por Titulo</option>
 			<option value='2'>Ordenar por Autor</option>
 			<option value='3'>Ordenar por Publicacion</option>
@@ -67,6 +67,16 @@
 
 		$seleccion = $_GET["seleccion"];
 
+		if ($_GET["seleccion"] == null) {
+
+			$seleccion = 0;
+
+		} else {
+
+			$seleccion = $_GET["seleccion"];
+
+		}
+
 		// realizamos la conexión
 		$con = mysqli_connect($servidor, $usuario_bd, $contrasena, $bd);
 		if (!$con) {
@@ -77,11 +87,492 @@
 			mysqli_set_charset($con, "utf8");
 		}
 
-		if ($seleccion == 1) {
+		if ($seleccion == 0) {
+
+			echo "<table class='table table-striped ml-5 mr-5'>";
+			$instruccion = "SELECT * FROM libros WHERE 1";
+			$resultado = mysqli_query($con, $instruccion);
+	
+			echo "<tr>";
+			echo "<th colspan='10' class='text-center'>Libros</th>";
+			echo "</tr>";
+
+			echo "<tr>";
+			echo "<td> Titulo </td>";
+			echo "<td> Autor </td>";
+			echo "<td> Publicacion </td>";
+			echo "<td> Edicion </td>";
+			echo "<td> Precio </td>";
+			echo "<td> Genero </td>";
+			echo "<td> Paginas </td>";
+			echo "<td> Tipo </td>";
+			echo "<td> Editorial</td>";
+			echo "<td> Carrito </td>";
+			echo "</tr>";
+	
+			while ($fila = $resultado->fetch_assoc()) {
+	
+				$id = $fila["id"];
+				$titulo = $fila["titulo"];
+				$autor = $fila["autor"];
+				$publicacion = $fila["publicacion"];
+				$edicion = $fila["edicion"];
+				$precio = $fila["precio"];
+				$genero = $fila["genero"];
+				$paginas = $fila["paginas"];
+				$tipo = $fila["tipo"];
+				$editorial = $fila["editorial"];
+	
+				echo "<tr>";
+				echo "<td>" . $titulo . "</td>";
+				echo "<td>" . $autor . "</td>";
+				echo "<td>" . $publicacion . "</td>";
+				echo "<td>" . $edicion . "</td>";
+				echo "<td>" . $precio . "</td>";
+				echo "<td>" . $genero . "</td>";
+				echo "<td>" . $paginas . "</td>";
+				echo "<td>" . $tipo . "</td>";
+				echo "<td>" . $editorial . "</td>";
+				echo "<td><a class='fas fa-shopping-cart btn' href='./carrito/principal.php?id=$id' ></a></td>";
+				echo "</tr>";
+	
+			}
+	
+			echo "</table>";
+
+		} else if ($seleccion == 1) {
 
 			echo "<table class='table table-striped ml-5 mr-5'>";
 			$instruccion = "SELECT * FROM libros WHERE 1 ORDER BY titulo";
 			$resultado = mysqli_query($con, $instruccion);
+	
+			echo "<tr>";
+			echo "<th colspan='10' class='text-center'> Ordenador por Titulo </th>";
+			echo "</tr>";
+
+			echo "<tr>";
+			echo "<td> Titulo </td>";
+			echo "<td> Autor </td>";
+			echo "<td> Publicacion </td>";
+			echo "<td> Edicion </td>";
+			echo "<td> Precio </td>";
+			echo "<td> Genero </td>";
+			echo "<td> Paginas </td>";
+			echo "<td> Tipo </td>";
+			echo "<td> Editorial</td>";
+			echo "<td> Carrito </td>";
+			echo "</tr>";
+	
+			while ($fila = $resultado->fetch_assoc()) {
+	
+				$id = $fila["id"];
+				$titulo = $fila["titulo"];
+				$autor = $fila["autor"];
+				$publicacion = $fila["publicacion"];
+				$edicion = $fila["edicion"];
+				$precio = $fila["precio"];
+				$genero = $fila["genero"];
+				$paginas = $fila["paginas"];
+				$tipo = $fila["tipo"];
+				$editorial = $fila["editorial"];
+	
+				echo "<tr>";
+				echo "<td>" . $titulo . "</td>";
+				echo "<td>" . $autor . "</td>";
+				echo "<td>" . $publicacion . "</td>";
+				echo "<td>" . $edicion . "</td>";
+				echo "<td>" . $precio . "</td>";
+				echo "<td>" . $genero . "</td>";
+				echo "<td>" . $paginas . "</td>";
+				echo "<td>" . $tipo . "</td>";
+				echo "<td>" . $editorial . "</td>";
+				echo "<td><a class='fas fa-shopping-cart btn' href='./carrito/principal.php?id=$id' ></a></td>";
+				echo "</tr>";
+	
+			}
+	
+			echo "</table>";
+
+		} else if ($seleccion == 2) {
+
+			echo "<table class='table table-striped ml-5 mr-5'>";
+			$instruccion = "SELECT * FROM libros WHERE 1 ORDER BY autor";
+			$resultado = mysqli_query($con, $instruccion);
+	
+			echo "<tr>";
+			echo "<th colspan='10' class='text-center'> Ordenador por Autor </th>";
+			echo "</tr>";
+
+			echo "<tr>";
+			echo "<td> Titulo </td>";
+			echo "<td> Autor </td>";
+			echo "<td> Publicacion </td>";
+			echo "<td> Edicion </td>";
+			echo "<td> Precio </td>";
+			echo "<td> Genero </td>";
+			echo "<td> Paginas </td>";
+			echo "<td> Tipo </td>";
+			echo "<td> Editorial</td>";
+			echo "<td> Carrito </td>";
+			echo "</tr>";
+	
+			while ($fila = $resultado->fetch_assoc()) {
+	
+				$id = $fila["id"];
+				$titulo = $fila["titulo"];
+				$autor = $fila["autor"];
+				$publicacion = $fila["publicacion"];
+				$edicion = $fila["edicion"];
+				$precio = $fila["precio"];
+				$genero = $fila["genero"];
+				$paginas = $fila["paginas"];
+				$tipo = $fila["tipo"];
+				$editorial = $fila["editorial"];
+	
+				echo "<tr>";
+				echo "<td>" . $titulo . "</td>";
+				echo "<td>" . $autor . "</td>";
+				echo "<td>" . $publicacion . "</td>";
+				echo "<td>" . $edicion . "</td>";
+				echo "<td>" . $precio . "</td>";
+				echo "<td>" . $genero . "</td>";
+				echo "<td>" . $paginas . "</td>";
+				echo "<td>" . $tipo . "</td>";
+				echo "<td>" . $editorial . "</td>";
+				echo "<td><a class='fas fa-shopping-cart btn' href='./carrito/principal.php?id=$id' ></a></td>";
+				echo "</tr>";
+	
+			} 
+	
+			echo "</table>";
+
+		} else if ($seleccion == 3) {
+
+			echo "<table class='table table-striped ml-5 mr-5'>";
+			$instruccion = "SELECT * FROM libros WHERE 1 ORDER BY publicacion";
+			$resultado = mysqli_query($con, $instruccion);
+
+			echo "<tr>";
+			echo "<th colspan='10' class='text-center'> Ordenador por Publicacion </th>";
+			echo "</tr>";
+	
+			echo "<tr>";
+			echo "<td> Titulo </td>";
+			echo "<td> Autor </td>";
+			echo "<td> Publicacion </td>";
+			echo "<td> Edicion </td>";
+			echo "<td> Precio </td>";
+			echo "<td> Genero </td>";
+			echo "<td> Paginas </td>";
+			echo "<td> Tipo </td>";
+			echo "<td> Editorial</td>";
+			echo "<td> Carrito </td>";
+			echo "</tr>";
+	
+			while ($fila = $resultado->fetch_assoc()) {
+	
+				$id = $fila["id"];
+				$titulo = $fila["titulo"];
+				$autor = $fila["autor"];
+				$publicacion = $fila["publicacion"];
+				$edicion = $fila["edicion"];
+				$precio = $fila["precio"];
+				$genero = $fila["genero"];
+				$paginas = $fila["paginas"];
+				$tipo = $fila["tipo"];
+				$editorial = $fila["editorial"];
+	
+				echo "<tr>";
+				echo "<td>" . $titulo . "</td>";
+				echo "<td>" . $autor . "</td>";
+				echo "<td>" . $publicacion . "</td>";
+				echo "<td>" . $edicion . "</td>";
+				echo "<td>" . $precio . "</td>";
+				echo "<td>" . $genero . "</td>";
+				echo "<td>" . $paginas . "</td>";
+				echo "<td>" . $tipo . "</td>";
+				echo "<td>" . $editorial . "</td>";
+				echo "<td><a class='fas fa-shopping-cart btn' href='./carrito/principal.php?id=$id' ></a></td>";
+				echo "</tr>";
+	
+			}
+	
+			echo "</table>";
+
+		} else if ($seleccion == 4) {
+
+			echo "<table class='table table-striped ml-5 mr-5'>";
+			$instruccion = "SELECT * FROM libros WHERE 1 ORDER BY edicion";
+			$resultado = mysqli_query($con, $instruccion);
+
+			echo "<tr>";
+			echo "<th colspan='10' class='text-center'> Ordenador por Edicion</th>";
+			echo "</tr>";
+	
+			echo "<tr>";
+			echo "<td> Titulo </td>";
+			echo "<td> Autor </td>";
+			echo "<td> Publicacion </td>";
+			echo "<td> Edicion </td>";
+			echo "<td> Precio </td>";
+			echo "<td> Genero </td>";
+			echo "<td> Paginas </td>";
+			echo "<td> Tipo </td>";
+			echo "<td> Editorial</td>";
+			echo "<td> Carrito </td>";
+			echo "</tr>";
+	
+			while ($fila = $resultado->fetch_assoc()) {
+	
+				$id = $fila["id"];
+				$titulo = $fila["titulo"];
+				$autor = $fila["autor"];
+				$publicacion = $fila["publicacion"];
+				$edicion = $fila["edicion"];
+				$precio = $fila["precio"];
+				$genero = $fila["genero"];
+				$paginas = $fila["paginas"];
+				$tipo = $fila["tipo"];
+				$editorial = $fila["editorial"];
+	
+				echo "<tr>";
+				echo "<td>" . $titulo . "</td>";
+				echo "<td>" . $autor . "</td>";
+				echo "<td>" . $publicacion . "</td>";
+				echo "<td>" . $edicion . "</td>";
+				echo "<td>" . $precio . "</td>";
+				echo "<td>" . $genero . "</td>";
+				echo "<td>" . $paginas . "</td>";
+				echo "<td>" . $tipo . "</td>";
+				echo "<td>" . $editorial . "</td>";
+				echo "<td><a class='fas fa-shopping-cart btn' href='./carrito/principal.php?id=$id' ></a></td>";
+				echo "</tr>";
+	
+			}
+	
+			echo "</table>";
+
+		} else if ($seleccion == 5) {
+
+			echo "<table class='table table-striped ml-5 mr-5'>";
+			$instruccion = "SELECT * FROM libros WHERE 1 ORDER BY precio";
+			$resultado = mysqli_query($con, $instruccion);
+
+			echo "<tr>";
+			echo "<th colspan='10' class='text-center'> Ordenador por Precio</th>";
+			echo "</tr>";
+	
+			echo "<tr>";
+			echo "<td> Titulo </td>";
+			echo "<td> Autor </td>";
+			echo "<td> Publicacion </td>";
+			echo "<td> Edicion </td>";
+			echo "<td> Precio </td>";
+			echo "<td> Genero </td>";
+			echo "<td> Paginas </td>";
+			echo "<td> Tipo </td>";
+			echo "<td> Editorial</td>";
+			echo "<td> Carrito </td>";
+			echo "</tr>";
+	
+			while ($fila = $resultado->fetch_assoc()) {
+	
+				$id = $fila["id"];
+				$titulo = $fila["titulo"];
+				$autor = $fila["autor"];
+				$publicacion = $fila["publicacion"];
+				$edicion = $fila["edicion"];
+				$precio = $fila["precio"];
+				$genero = $fila["genero"];
+				$paginas = $fila["paginas"];
+				$tipo = $fila["tipo"];
+				$editorial = $fila["editorial"];
+	
+				echo "<tr>";
+				echo "<td>" . $titulo . "</td>";
+				echo "<td>" . $autor . "</td>";
+				echo "<td>" . $publicacion . "</td>";
+				echo "<td>" . $edicion . "</td>";
+				echo "<td>" . $precio . "</td>";
+				echo "<td>" . $genero . "</td>";
+				echo "<td>" . $paginas . "</td>";
+				echo "<td>" . $tipo . "</td>";
+				echo "<td>" . $editorial . "</td>";
+				echo "<td><a class='fas fa-shopping-cart btn' href='./carrito/principal.php?id=$id' ></a></td>";
+				echo "</tr>";
+	
+			}
+	
+			echo "</table>";
+
+		} else if ($seleccion == 6) {
+
+			echo "<table class='table table-striped ml-5 mr-5'>";
+			$instruccion = "SELECT * FROM libros WHERE 1 ORDER BY genero";
+			$resultado = mysqli_query($con, $instruccion);
+
+			echo "<tr>";
+			echo "<th colspan='10' class='text-center'> Ordenador por Genero</th>";
+			echo "</tr>";
+	
+			echo "<tr>";
+			echo "<td> Titulo </td>";
+			echo "<td> Autor </td>";
+			echo "<td> Publicacion </td>";
+			echo "<td> Edicion </td>";
+			echo "<td> Precio </td>";
+			echo "<td> Genero </td>";
+			echo "<td> Paginas </td>";
+			echo "<td> Tipo </td>";
+			echo "<td> Editorial</td>";
+			echo "<td> Carrito </td>";
+			echo "</tr>";
+	
+			while ($fila = $resultado->fetch_assoc()) {
+	
+				$id = $fila["id"];
+				$titulo = $fila["titulo"];
+				$autor = $fila["autor"];
+				$publicacion = $fila["publicacion"];
+				$edicion = $fila["edicion"];
+				$precio = $fila["precio"];
+				$genero = $fila["genero"];
+				$paginas = $fila["paginas"];
+				$tipo = $fila["tipo"];
+				$editorial = $fila["editorial"];
+	
+				echo "<tr>";
+				echo "<td>" . $titulo . "</td>";
+				echo "<td>" . $autor . "</td>";
+				echo "<td>" . $publicacion . "</td>";
+				echo "<td>" . $edicion . "</td>";
+				echo "<td>" . $precio . "</td>";
+				echo "<td>" . $genero . "</td>";
+				echo "<td>" . $paginas . "</td>";
+				echo "<td>" . $tipo . "</td>";
+				echo "<td>" . $editorial . "</td>";
+				echo "<td><a class='fas fa-shopping-cart btn' href='./carrito/principal.php?id=$id' ></a></td>";
+				echo "</tr>";
+	
+			}
+	
+			echo "</table>";
+
+		} else if ($seleccion == 7) {
+
+			echo "<table class='table table-striped ml-5 mr-5'>";
+			$instruccion = "SELECT * FROM libros WHERE 1 ORDER BY paginas";
+			$resultado = mysqli_query($con, $instruccion);
+
+			echo "<tr>";
+			echo "<th colspan='10' class='text-center'> Ordenador por Paginas</th>";
+			echo "</tr>";
+	
+			echo "<tr>";
+			echo "<td> Titulo </td>";
+			echo "<td> Autor </td>";
+			echo "<td> Publicacion </td>";
+			echo "<td> Edicion </td>";
+			echo "<td> Precio </td>";
+			echo "<td> Genero </td>";
+			echo "<td> Paginas </td>";
+			echo "<td> Tipo </td>";
+			echo "<td> Editorial</td>";
+			echo "<td> Carrito </td>";
+			echo "</tr>";
+	
+			while ($fila = $resultado->fetch_assoc()) {
+	
+				$id = $fila["id"];
+				$titulo = $fila["titulo"];
+				$autor = $fila["autor"];
+				$publicacion = $fila["publicacion"];
+				$edicion = $fila["edicion"];
+				$precio = $fila["precio"];
+				$genero = $fila["genero"];
+				$paginas = $fila["paginas"];
+				$tipo = $fila["tipo"];
+				$editorial = $fila["editorial"];
+	
+				echo "<tr>";
+				echo "<td>" . $titulo . "</td>";
+				echo "<td>" . $autor . "</td>";
+				echo "<td>" . $publicacion . "</td>";
+				echo "<td>" . $edicion . "</td>";
+				echo "<td>" . $precio . "</td>";
+				echo "<td>" . $genero . "</td>";
+				echo "<td>" . $paginas . "</td>";
+				echo "<td>" . $tipo . "</td>";
+				echo "<td>" . $editorial . "</td>";
+				echo "<td><a class='fas fa-shopping-cart btn' href='./carrito/principal.php?id=$id' ></a></td>";
+				echo "</tr>";
+	
+			}
+	
+			echo "</table>";
+
+		} else if ($seleccion == 8) {
+
+			echo "<table class='table table-striped ml-5 mr-5'>";
+			$instruccion = "SELECT * FROM libros WHERE 1 ORDER BY tipo";
+			$resultado = mysqli_query($con, $instruccion);
+
+			echo "<tr>";
+			echo "<th colspan='10' class='text-center'> Ordenador por Tipo</th>";
+			echo "</tr>";
+	
+			echo "<tr>";
+			echo "<td> Titulo </td>";
+			echo "<td> Autor </td>";
+			echo "<td> Publicacion </td>";
+			echo "<td> Edicion </td>";
+			echo "<td> Precio </td>";
+			echo "<td> Genero </td>";
+			echo "<td> Paginas </td>";
+			echo "<td> Tipo </td>";
+			echo "<td> Editorial</td>";
+			echo "<td> Carrito </td>";
+			echo "</tr>";
+	
+			while ($fila = $resultado->fetch_assoc()) {
+	
+				$id = $fila["id"];
+				$titulo = $fila["titulo"];
+				$autor = $fila["autor"];
+				$publicacion = $fila["publicacion"];
+				$edicion = $fila["edicion"];
+				$precio = $fila["precio"];
+				$genero = $fila["genero"];
+				$paginas = $fila["paginas"];
+				$tipo = $fila["tipo"];
+				$editorial = $fila["editorial"];
+	
+				echo "<tr>";
+				echo "<td>" . $titulo . "</td>";
+				echo "<td>" . $autor . "</td>";
+				echo "<td>" . $publicacion . "</td>";
+				echo "<td>" . $edicion . "</td>";
+				echo "<td>" . $precio . "</td>";
+				echo "<td>" . $genero . "</td>";
+				echo "<td>" . $paginas . "</td>";
+				echo "<td>" . $tipo . "</td>";
+				echo "<td>" . $editorial . "</td>";
+				echo "<td><a class='fas fa-shopping-cart btn' href='./carrito/principal.php?id=$id' ></a></td>";
+				echo "</tr>";
+	
+			}
+	
+			echo "</table>";
+
+		} else if ($seleccion == 9) {
+
+			echo "<table class='table table-striped ml-5 mr-5'>";
+			$instruccion = "SELECT * FROM libros WHERE 1 ORDER BY editorial";
+			$resultado = mysqli_query($con, $instruccion);
+
+			echo "<tr>";
+			echo "<th colspan='10' class='text-center'> Ordenador por Editorial</th>";
+			echo "</tr>";
 	
 			echo "<tr>";
 			echo "<td> Titulo </td>";
