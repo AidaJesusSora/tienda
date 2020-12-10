@@ -29,38 +29,43 @@
 
 	<br>
 
-	<div class="row container">
+	<?php
+
+	$seleccion = null;
+
+	echo"<div class='row container'>
+
+	<form method='GET'>
 	
-		<form action="">
+		<select  class='form-control container' name='seleccion'>
 
-			<select class="form-control" name="seleccion">
+			<option value='0' selected>---</option>
+			<option value='1'>Ordenar por Titulo</option>
+			<option value='2'>Ordenar por Autor</option>
+			<option value='3'>Ordenar por Publicacion</option>
+			<option value='4'>Ordenar por Edicion</option>
+			<option value='5'>Ordenar por Precio</option>
+			<option value='6'>Ordenar por Genero</option>
+			<option value='7'>Ordenar por Paginas</option>
+			<option value='8'>Ordenar por Tipo</option>
+			<option value='9'>Ordenar por Editorial</option>
 
-				<option value="0" selected>---</option>
-				<option value="1">Ordenar por Titulo</option>
-				<option value="2">Ordenar por Autor</option>
-				<option value="3">Ordenar por Publicacion</option>
-				<option value="4">Ordenar por Edicion</option>
-				<option value="5">Ordenar por Precio</option>
-				<option value="6">Ordenar por Genero</option>
-				<option value="7">Ordenar por Paginas</option>
-				<option value="8">Ordenar por Tipo</option>
-				<option value="9">Ordenar por Editorial</option>
+		</select>
 
-			</select>
+		<input type='submit' value='Enviar'>
 
-		</form>
-
+	</form>
 	</div>
 
-	<div class="row">
-
-		<?php
+	<div class='row'>";
 
 		// Parámetros de conexión
 		$servidor = "localhost";
 		$usuario_bd = "root";
 		$contrasena = "";
 		$bd = "test";
+
+		$seleccion = $_GET["seleccion"];
 
 		// realizamos la conexión
 		$con = mysqli_connect($servidor, $usuario_bd, $contrasena, $bd);
@@ -121,58 +126,7 @@
 	
 			echo "</table>";
 
-		} else {
-
-			echo "<table class='table table-striped ml-5 mr-5'>";
-			$instruccion = "SELECT * FROM libros WHERE 1 ORDER BY autor";
-			$resultado = mysqli_query($con, $instruccion);
-	
-			echo "<tr>";
-			echo "<td> Titulo </td>";
-			echo "<td> Autor </td>";
-			echo "<td> Publicacion </td>";
-			echo "<td> Edicion </td>";
-			echo "<td> Precio </td>";
-			echo "<td> Genero </td>";
-			echo "<td> Paginas </td>";
-			echo "<td> Tipo </td>";
-			echo "<td> Editorial</td>";
-			echo "<td> Carrito </td>";
-			echo "</tr>";
-	
-			while ($fila = $resultado->fetch_assoc()) {
-	
-				$id = $fila["id"];
-				$titulo = $fila["titulo"];
-				$autor = $fila["autor"];
-				$publicacion = $fila["publicacion"];
-				$edicion = $fila["edicion"];
-				$precio = $fila["precio"];
-				$genero = $fila["genero"];
-				$paginas = $fila["paginas"];
-				$tipo = $fila["tipo"];
-				$editorial = $fila["editorial"];
-	
-				echo "<tr>";
-				echo "<td>" . $titulo . "</td>";
-				echo "<td>" . $autor . "</td>";
-				echo "<td>" . $publicacion . "</td>";
-				echo "<td>" . $edicion . "</td>";
-				echo "<td>" . $precio . "</td>";
-				echo "<td>" . $genero . "</td>";
-				echo "<td>" . $paginas . "</td>";
-				echo "<td>" . $tipo . "</td>";
-				echo "<td>" . $editorial . "</td>";
-				echo "<td><a class='fas fa-shopping-cart btn' href='./carrito/principal.php?id=$id' ></a></td>";
-				echo "</tr>";
-	
-			}
-	
-			echo "</table>";
-
 		}
-
-		
 
         ?>
         
