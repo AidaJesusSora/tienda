@@ -91,11 +91,13 @@ $logueado=0;
 							if ($usuario != 0) {
 
 								// Conexion del administrador
+								$logueado=1;
 								header ("Location: ./../administrador/usuario-administrador.html");
 
 							} else {
 
 								// Conexion del usuario normal
+								$logueado=1;
 								header ("Location: ./../registrado/usuario-conectado.html");
 
 							}
