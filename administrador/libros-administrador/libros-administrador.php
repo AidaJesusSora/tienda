@@ -95,7 +95,7 @@
 
 			echo"<div class='row container'>
 
-				<form method='GET' class='ml-4' action='./generar/excel/principal.php'>
+				<form method='GET' class='ml-4' action='./generar/xml/principal.php'>
 
 					<div class='input-group mb-3'>
 

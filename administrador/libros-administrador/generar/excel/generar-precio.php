@@ -17,9 +17,11 @@
                 if (!$con) {
     
                     die("Con se ha podido realizar la conexión: " . mysqli_connect_error() . "<br>");
+
                 } else {
     
                     mysqli_set_charset($con, "utf8");
+
                 }
     
                 echo "<table border='1' width='25%'>";
@@ -42,8 +44,7 @@
                 }
     
                 echo "</table>";
-
-            
+                
                 header('Content-type: application/vnd.ms-excel;charset=iso-8859-15');
                 header('Content-disposition: attachment; filename=precio-libros.xls');
             
