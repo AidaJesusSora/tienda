@@ -16,16 +16,10 @@
     font-size: 50px !important;
 }
 
-.categorias-libro {
-    margin-top: 20px;
-    margin-left: 45px;
-    width: 90%;
-    height: 100px;
-}
-
-.boton {
-    font-size: 30px;
-    text-transform: capitalize;
+select .form-control {
+    float: left !important;
+    width: 70% !important;
+    margin-right: 20px !important;
 }
 
 #sec-random {
@@ -51,5 +45,16 @@ footer {
 
 .col-right {
 	width:49%;
+	float:left;
+}
+
+.col-left-admin {
+	width: 25%;
+	float:left;
+	margin-right:1%;
+}
+
+.col-right-admin {
+	width:25%;
 	float:left;
 }

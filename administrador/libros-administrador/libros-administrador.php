@@ -34,70 +34,173 @@
 
 		<?php
 
-		// Parámetros de conexión
-		$servidor = "localhost";
-		$usuario_bd = "root";
-		$contrasena = "";
-		$bd = "test";
+		error_reporting(E_ALL & ~E_NOTICE);
 
-		// realizamos la conexión
-		$con = mysqli_connect($servidor, $usuario_bd, $contrasena, $bd);
-		if (!$con) {
+		$seleccion = 0;
 
-			die("Con se ha podido realizar la conexión: " . mysqli_connect_error() . "<br>");
-		} else {
+		echo "<div class='col-left-admin ml-3'>";
+		
+			mostrar();
+		
+		echo "</div>";
 
-			mysqli_set_charset($con, "utf8");
+		echo "<div class='col-right-admin'>";
+		
+			generar_xml();
+	
+		echo "</div>";
+		
+
+		function mostrar() {
+
+			echo"<div class='row container'>
+
+				<form method='GET' class='ml-4' action='./generar/excel/principal.php'>
+
+					<div class='input-group mb-3'>
+
+						<div class='input-group-prepend'>
+
+							<label class='input-group-text' for='inputGroupSelect01'>Generar Excel de...</label>
+
+						</div>
+
+						<select class='custom-select' name='seleccion'>
+
+							<option value='0'>---</option>
+							<option value='1'>Titulo</option>
+							<option value='2'>Autor</option>
+							<option value='3'>Publicacion</option>
+							<option value='4'>Edicion</option>
+							<option value='5'>Precio</option>
+							<option value='6'>Genero</option>
+							<option value='7'>Paginas</option>
+							<option value='8'>Tipo</option>
+							<option value='9'>Editorial</option>
+							<option value='10'>Todo</option>
+
+						</select>
+
+						<input type='submit' class='btn btn-outline-success ml-2' value='Enviar'>
+
+					</div>
+
+				</form>
+
+			</div>";
+
 		}
 
-		echo "<table class='table table-striped ml-5 mr-5'>";
-		$instruccion = "SELECT * FROM libros WHERE 1";
-		$resultado = mysqli_query($con, $instruccion);
+		function generar_xml() {
 
-		echo "<tr>";
-		echo "<td> Titulo </td>";
-		echo "<td> Autor </td>";
-		echo "<td> Publicacion </td>";
-		echo "<td> Edicion </td>";
-		echo "<td> Precio </td>";
-		echo "<td> Genero </td>";
-		echo "<td> Paginas </td>";
-		echo "<td> Libros </td>";
-		echo "<td> Editorial</td>";
-		echo "<td> Modificar </td>";
-		echo "<td> Borrar </td>";
-		echo "</tr>";
+			echo"<div class='row container'>
 
-		while ($fila = $resultado->fetch_assoc()) {
+				<form method='GET' class='ml-4' action='./generar/excel/principal.php'>
 
-			$id = $fila["id"];
-			$titulo = $fila["titulo"];
-			$autor = $fila["autor"];
-			$publicacion = $fila["publicacion"];
-			$edicion = $fila["edicion"];
-			$precio = $fila["precio"];
-			$genero = $fila["genero"];
-			$paginas = $fila["paginas"];
-			$tipo = $fila["tipo"];
-			$editorial = $fila["editorial"];
+					<div class='input-group mb-3'>
+
+						<div class='input-group-prepend'>
+
+							<label class='input-group-text' for='inputGroupSelect01'>Generar XML de...</label>
+
+						</div>
+
+						<select class='custom-select' name='seleccion'>
+
+							<option value='0'>---</option>
+							<option value='1'>Titulo</option>
+							<option value='2'>Autor</option>
+							<option value='3'>Publicacion</option>
+							<option value='4'>Edicion</option>
+							<option value='5'>Precio</option>
+							<option value='6'>Genero</option>
+							<option value='7'>Paginas</option>
+							<option value='8'>Tipo</option>
+							<option value='9'>Editorial</option>
+							<option value='10'>Todo</option>
+
+						</select>
+
+						<input type='submit' class='btn btn-outline-success ml-2' value='Enviar'>
+
+					</div>
+
+				</form>
+
+			</div>";
+
+		}
+
+		listar();
+
+		function listar() {
+
+			// Parámetros de conexión
+			$servidor = "localhost";
+			$usuario_bd = "root";
+			$contrasena = "";
+			$bd = "test";
+
+			// realizamos la conexión
+			$con = mysqli_connect($servidor, $usuario_bd, $contrasena, $bd);
+			if (!$con) {
+
+				die("Con se ha podido realizar la conexión: " . mysqli_connect_error() . "<br>");
+			} else {
+
+				mysqli_set_charset($con, "utf8");
+			}
+
+			echo "<table class='table table-striped ml-5 mr-5'>";
+			$instruccion = "SELECT * FROM libros WHERE 1";
+			$resultado = mysqli_query($con, $instruccion);
 
 			echo "<tr>";
-			echo "<td>" . $titulo . "</td>";
-			echo "<td>" . $autor . "</td>";
-			echo "<td>" . $publicacion . "</td>";
-			echo "<td>" . $edicion . "</td>";
-			echo "<td>" . $precio . "</td>";
-			echo "<td>" . $genero . "</td>";
-			echo "<td>" . $paginas . "</td>";
-			echo "<td>" . $tipo . "</td>";
-			echo "<td>" . $editorial . "</td>";
-			echo "<td><a class='far fa-edit btn' href='./modificar/principal.php?id=$id' ></a></td>";
-			echo "<td><a class='far fa-trash-alt btn' href='./eliminar/principal.php'></a></td>";
+			echo "<td> Titulo </td>";
+			echo "<td> Autor </td>";
+			echo "<td> Publicacion </td>";
+			echo "<td> Edicion </td>";
+			echo "<td> Precio </td>";
+			echo "<td> Genero </td>";
+			echo "<td> Paginas </td>";
+			echo "<td> Libros </td>";
+			echo "<td> Editorial</td>";
+			echo "<td> Modificar </td>";
+			echo "<td> Borrar </td>";
 			echo "</tr>";
 
-		}
+			while ($fila = $resultado->fetch_assoc()) {
 
-		echo "</table>";
+				$id = $fila["id"];
+				$titulo = $fila["titulo"];
+				$autor = $fila["autor"];
+				$publicacion = $fila["publicacion"];
+				$edicion = $fila["edicion"];
+				$precio = $fila["precio"];
+				$genero = $fila["genero"];
+				$paginas = $fila["paginas"];
+				$tipo = $fila["tipo"];
+				$editorial = $fila["editorial"];
+
+				echo "<tr>";
+				echo "<td>" . $titulo . "</td>";
+				echo "<td>" . $autor . "</td>";
+				echo "<td>" . $publicacion . "</td>";
+				echo "<td>" . $edicion . "</td>";
+				echo "<td>" . $precio . "</td>";
+				echo "<td>" . $genero . "</td>";
+				echo "<td>" . $paginas . "</td>";
+				echo "<td>" . $tipo . "</td>";
+				echo "<td>" . $editorial . "</td>";
+				echo "<td><a class='far fa-edit btn' href='./modificar/principal.php?id=$id' ></a></td>";
+				echo "<td><a class='far fa-trash-alt btn' href='./eliminar/principal.php'></a></td>";
+				echo "</tr>";
+
+			}
+
+			echo "</table>";
+		
+		}
 
 		?>
 
