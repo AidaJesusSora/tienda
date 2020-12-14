@@ -15,20 +15,29 @@
 
 	</header>
 
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
 		<a class="navbar-brand" href="#">BookMarket</a>
-		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-			<div class="navbar-nav">
-				<a class="nav-link active" href="#">Libros</a>
-				<a class="nav-link" href="#">Editoriales</a>
-				<a class="nav-link" href="#">Tipo Libro</a>
-				<a class="nav-link" href="#">Categoria</a>
-
-				<a class="nav-link" href="#">Mi cuenta</a>
-				<span class="glyphicon glyphicon-shopping-cart"><a class="nav-link" href="#"></a></span>
-			</div>
+	  
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+		  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			<li class="nav-item active">
+				<a class="nav-link" href="../libros-administrador.php">Libros</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="../../usuarios-administrador/usuarios-administrador.php">Usuarios</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" type="button" data-toggle="modal" data-target="#desconexion"
+				onclick="funcionAlerta()">Log out</a>
+			</li>
+		  </ul>
 		</div>
+		
 	</nav>
+
 
 	<br>
 
