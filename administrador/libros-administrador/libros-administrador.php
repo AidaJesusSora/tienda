@@ -115,7 +115,7 @@
 
 						<div class='input-group-prepend'>
 
-							<label class='input-group-text' for='inputGroupSelect01'>Generar XML de...</label>
+							<label class='input-group-text'>Generar XML de...</label>
 
 						</div>
 

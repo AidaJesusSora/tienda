@@ -1,3 +1,9 @@
+<?php
+
+	include './../comprovaciones-formularios/login.php';
+
+?>
+
 <html>
 
 <head>
@@ -12,12 +18,6 @@
 	<script type="text/javascript" src="./../js/java-script.js"> </script>
 </head>
 
-<?php
-
-	include './../comprovaciones-formularios/login.php';
-
-?>
-
 <body>
 
 	<header class="header">
@@ -27,23 +27,30 @@
 	</header>
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
 		  <span class="navbar-toggler-icon"></span>
 		</button>
+
 		<a class="navbar-brand text-white" href="#">BookMarket</a>
 	  
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+
 		  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
 			<li class="nav-item">
 				<a class="nav-link text-white" href="./libros-administrador/libros-administrador.php">Libros</a>
 			</li>
+
 			<li class="nav-item">
 				<a class="nav-link text-white" href="./usuarios-administrador/usuarios-administrador.php">Usuarios</a>
 			</li>
+
 			<li class="nav-item">
 				<a class="nav-link text-white" type="button" data-toggle="modal" data-target="#desconexion"
 				onclick="funcionAlerta()">Log out</a>
 			</li>
+
 		  </ul>
 		  
 		</div>
@@ -57,11 +64,20 @@
 	<div class="container-fluid mt-3 row text-justify">
 
 		<div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At ad dolorum mollitia consectetur excepturi enim unde nisi eaque est, autem vero blanditiis qui nemo voluptatum maxime fugit eligendi iure reprehenderit sint, neque fuga hic! Nisi dolore perspiciatis voluptate, vero eveniet ratione aspernatur fugiat assumenda exercitationem libero tempore veritatis minima at harum reprehenderit quam id voluptatibus perferendis quia nobis cum ab labore vitae. Perspiciatis error quo distinctio aspernatur deleniti minus similique incidunt velit dolorem quas impedit et, at, tenetur eius ea voluptatem hic sapiente veniam dolores, delectus quam. A necessitatibus, blanditiis, earum consectetur aliquid corporis, quis ducimus et dolores modi enim.</p>
+
 			<br>
+
 			<a class="btn btn-outline-info btn-group-lg btn-block container" href="./libros-administrador/libros-administrador.php" role="button">Ver los libros</a>
+
 		</div>
-		<div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0"><img src="./../img/books.jpg" class="img-fluid"></div>
+
+		<div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+
+			<img src="./../img/books.jpg" class="img-fluid">
+
+		</div>
 
 	</div>
 
@@ -87,15 +103,23 @@
 		<div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0"><img src="./../img/usuarios.jpg" class="img-fluid"></div>
 
 		<div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At ad dolorum mollitia consectetur excepturi enim unde nisi eaque est, autem vero blanditiis qui nemo voluptatum maxime fugit eligendi iure reprehenderit sint, neque fuga hic! Nisi dolore perspiciatis voluptate, vero eveniet ratione aspernatur fugiat assumenda exercitationem libero tempore veritatis minima at harum reprehenderit quam id voluptatibus perferendis quia nobis cum ab labore vitae. Perspiciatis error quo distinctio aspernatur deleniti minus similique incidunt velit dolorem quas impedit et, at, tenetur eius ea voluptatem hic sapiente veniam dolores, delectus quam. A necessitatibus, blanditiis, earum consectetur aliquid corporis, quis ducimus et dolores modi enim.</p>
+
 			<br>
+
 			<a class="btn btn-outline-info btn-group-lg btn-block container" href="./usuarios-administrador/usuarios-administrador.php" role="button">Ver los usuarios</a>
+		
 		</div>
 
 	</div>
 	
 </body>
 
-<footer class="mt-4"> Aida Jesus Sora </footer>
+<footer class="mt-4"> 
+	
+	<p>Aida Jesus Sora</p>
+
+</footer>
 
 </html>
