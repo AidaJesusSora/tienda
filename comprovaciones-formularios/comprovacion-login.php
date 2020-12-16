@@ -93,14 +93,14 @@ $logueado=0;
 								// Conexion del administrador
 								$_SESSION["nickname"]=$nickname;
 								$logueado=1;
-								header ("Location: ./../administrador/usuario-administrador.php/");
+								header ("Location: ./../administrador/usuario-administrador.php");
 
 							} else {
 
 								// Conexion del usuario normal
 								$_SESSION["nickname"]=$nickname;
 								$logueado=1;
-								header ("Location: ./../registrado/usuario-conectado.php");
+								header ("Location: ./../usuario/usuario-conectado.php");
 
 							}
 

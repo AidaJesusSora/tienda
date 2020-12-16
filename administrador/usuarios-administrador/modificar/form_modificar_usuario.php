@@ -2,7 +2,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link href="./../../../estilo/style_interior_web.css" rel="stylesheet" type="text/css">
+	<link href="./../../style/admin-style.css" rel="stylesheet" type="text/css">
 	
 	<!-- Link Bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -25,12 +25,12 @@
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
 		  <span class="navbar-toggler-icon"></span>
 		</button>
-		<a class="navbar-brand" href="#">BookMarket</a>
+		<a class="navbar-brand" href="./../../usuario-administrador.php">BookMarket</a>
 	  
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 		  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 			<li class="nav-item active">
-				<a class="nav-link" href="../libros-administrador.php">Libros</a>
+				<a class="nav-link" href="./../../libros-administrador/libros-administrador.php">Libros</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="../../usuarios-administrador/usuarios-administrador.php">Usuarios</a>
