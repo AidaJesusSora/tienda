@@ -27,18 +27,18 @@
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
 		  <span class="navbar-toggler-icon"></span>
 		</button>
-		<a class="navbar-brand" href="./../usuario-administrador.php">BookMarket</a>
+		<a class="navbar-brand text-white" href="./../usuario-administrador.php">BookMarket</a>
 	  
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 		  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-			<li class="nav-item active">
-				<a class="nav-link" href="./../libros-administrador/libros-administrador.php">Libros</a>
+			<li class="nav-item">
+				<a class="nav-link text-white" href="./../libros-administrador/libros-administrador.php">Libros</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Usuarios</a>
+				<a class="nav-link text-white" href="#">Usuarios</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" type="button" data-toggle="modal" data-target="#desconexion"
+				<a class="nav-link text-white" type="button" data-toggle="modal" data-target="#desconexion"
 				onclick="funcionAlerta()">Log out</a>
 			</li>
 		  </ul>
@@ -70,51 +70,66 @@
 		}
 
 		// Generacion de la tabla cogiendo los datos del phpmyadmin
-		echo "<table class='table table-striped ml-5 mr-5'>";
-		$instruccion = "SELECT * FROM usuarios WHERE 1";
-		$resultado = mysqli_query($con, $instruccion);
+		echo "<div class='table-responsive mx-5'>";
 
-		echo "<tr>";
-		echo "<td> ID </td>";
-		echo "<td> Nombre </td>";
-		echo "<td> Apellido </td>";
-		echo "<td> Edad </td>";
-		echo "<td> Telefono </td>";
-		echo "<td> Nickname </td>";
-		echo "<td> Correo </td>";
-		echo "<td> Modificar </td>";
-		echo "<td> Eliminar </td>";
-		
-		echo "</tr>";
+			echo "<table class='table table-striped'>";
+			$instruccion = "SELECT * FROM usuarios WHERE 1";
+			$resultado = mysqli_query($con, $instruccion);
 
-		while ($fila = $resultado->fetch_assoc()) {
+			echo "<thead class='thead-light'>";
 
-			$id = $fila["id"];
-			$nombre = $fila["nombre"];
-			$apellidos = $fila["apellidos"];
-			$edad = $fila["edad"];
-			$telefono = $fila["telefono"];
-			$nickname = $fila["nickname"];
-			$correo = $fila["correo"];
+				echo "<tr>";
 
-			echo "<tr>";
-			echo "<td>" . $id . "</td>";
-			echo "<td>" . $nombre . "</td>";
-			echo "<td>" . $apellidos . "</td>";
-			echo "<td>" . $edad . "</td>";
-			echo "<td>" . $telefono . "</td>";
-			echo "<td>" . $nickname . "</td>";
-			echo "<td>" . $correo . "</td>";
-			echo "<td><a class='far fa-edit btn' href='./modificar/principal.php?id=$id'></a></td>";
-			echo "<td><a class='far fa-trash-alt btn' href='./eliminar/principal.php'></a></td>";
-			echo "</tr>";
-		}
+					echo "<th scope='col'> ID </th>";
+					echo "<th scope='col'> Nombre </th>";
+					echo "<th scope='col'> Apellido </th>";
+					echo "<th scope='col'> Edad </th>";
+					echo "<th scope='col'> Telefono </th>";
+					echo "<th scope='col'> Nickname </th>";
+					echo "<th scope='col'> Correo </th>";
+					echo "<th scope='col'> Modificar </th>";
+					echo "<th scope='col'> Eliminar </th>";
 
-		echo "</table>";
+				echo "</tr>";
+
+			echo "</thead>";
+
+			while ($fila = $resultado->fetch_assoc()) {
+
+				$id = $fila["id"];
+				$nombre = $fila["nombre"];
+				$apellidos = $fila["apellidos"];
+				$edad = $fila["edad"];
+				$telefono = $fila["telefono"];
+				$nickname = $fila["nickname"];
+				$correo = $fila["correo"];
+
+				echo "<tr>";
+
+					echo "<td scope='row'>" . $id . "</td>";
+					echo "<td>" . $nombre . "</td>";
+					echo "<td>" . $apellidos . "</td>";
+					echo "<td>" . $edad . "</td>";
+					echo "<td>" . $telefono . "</td>";
+					echo "<td>" . $nickname . "</td>";
+					echo "<td>" . $correo . "</td>";
+					echo "<td><a class='far fa-edit btn' href='./modificar/principal.php?id=$id'></a></td>";
+					echo "<td><a class='far fa-trash-alt btn' href='./eliminar/principal.php'></a></td>";
+					
+				echo "</tr>";
+			}
+
+			echo "</table>";
+
+		echo "</div>";
 
 		?>
 
-		<a class="btn btn-outline-info btn-group-lg btn-block container" href="./registro-usuario/alta_usuario.html" role="button">Registrar un usuario</a>
+		<div class="mx-5 btn btn-lg btn-block">
+
+			<a class="btn btn-outline-info container" href="./registro-usuario/alta_usuario.html" role="button">Registrar un usuario</a>
+
+		</div>
 
 	</div>
 

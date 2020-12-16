@@ -2,7 +2,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link href="./../../estilo/style_interior_web.css" rel="stylesheet" type="text/css">
+	<link href="./../style/admin-style.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 	<script type="text/javascript" src="./../../js/java-script.js"> </script>
@@ -21,18 +21,18 @@
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
 		  <span class="navbar-toggler-icon"></span>
 		</button>
-		<a class="navbar-brand" href="./../usuario-administrador.php">BookMarket</a>
+		<a class="navbar-brand text-white" href="./../usuario-administrador.php">BookMarket</a>
 	  
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 		  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-			<li class="nav-item active">
-				<a class="nav-link" href="./libros-administrador.php">Libros</a>
+			<li class="nav-item">
+				<a class="nav-link text-white" href="./libros-administrador.php">Libros</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="./../usuarios-administrador/usuarios-administrador.php">Usuarios</a>
+				<a class="nav-link text-white" href="./../usuarios-administrador/usuarios-administrador.php">Usuarios</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" type="button" data-toggle="modal" data-target="#desconexion"
+				<a class="nav-link text-white" type="button" data-toggle="modal" data-target="#desconexion"
 				onclick="funcionAlerta()">Log out</a>
 			</li>
 		  </ul>
@@ -46,34 +46,36 @@
 
 		<?php
 
-		error_reporting(E_ALL & ~E_NOTICE);
+		echo "<div class='row'>";
 
-		$seleccion = 0;
+			error_reporting(E_ALL & ~E_NOTICE);
 
-		echo "<div class='col-left-admin ml-3'>";
-		
-			mostrar();
-		
-		echo "</div>";
+			$seleccion = 0;
 
-		echo "<div class='col-right-admin'>";
+			echo "<div class='col-left-admin'>";
+			
+				mostrar();
+			
+			echo "</div>";
+
+			echo "<div class='col-right-admin'>";
+			
+				generar_xml();
 		
-			generar_xml();
-	
-		echo "</div>";
+			echo "</div>";
 		
 
 		function mostrar() {
 
-			echo"<div class='row container'>
+			echo"<div class='col container mx-5'>
 
-				<form method='GET' class='ml-4' action='./generar/excel/principal.php'>
+				<form method='GET' action='./generar/excel/principal.php'>
 
 					<div class='input-group mb-3'>
 
 						<div class='input-group-prepend'>
 
-							<label class='input-group-text' for='inputGroupSelect01'>Generar Excel de...</label>
+							<label class='input-group-text'>Generar Excel de...</label>
 
 						</div>
 
@@ -105,9 +107,9 @@
 
 		function generar_xml() {
 
-			echo"<div class='row container'>
+			echo"<div class='col container mx-5'>
 
-				<form method='GET' class='ml-4' action='./generar/xml/principal.php'>
+				<form method='GET' action='./generar/xml/principal.php'>
 
 					<div class='input-group mb-3'>
 
@@ -143,6 +145,8 @@
 
 		}
 
+		echo "</div>";
+
 		listar();
 
 		function listar() {
@@ -163,60 +167,76 @@
 				mysqli_set_charset($con, "utf8");
 			}
 
-			echo "<table class='table table-striped ml-5 mr-5'>";
-			$instruccion = "SELECT * FROM libros WHERE 1";
-			$resultado = mysqli_query($con, $instruccion);
+			echo "<div class='table-responsive mx-5'>";
 
-			echo "<tr>";
-			echo "<td> Titulo </td>";
-			echo "<td> Autor </td>";
-			echo "<td> Publicacion </td>";
-			echo "<td> Edicion </td>";
-			echo "<td> Precio </td>";
-			echo "<td> Genero </td>";
-			echo "<td> Paginas </td>";
-			echo "<td> Libros </td>";
-			echo "<td> Editorial</td>";
-			echo "<td> Modificar </td>";
-			echo "<td> Borrar </td>";
-			echo "</tr>";
+				echo "<table class='table table-striped'>";
+				$instruccion = "SELECT * FROM libros WHERE 1";
+				$resultado = mysqli_query($con, $instruccion);
+				
+				echo "<thead class='thead-light'>";
 
-			while ($fila = $resultado->fetch_assoc()) {
+					echo "<tr>";
 
-				$id = $fila["id"];
-				$titulo = $fila["titulo"];
-				$autor = $fila["autor"];
-				$publicacion = $fila["publicacion"];
-				$edicion = $fila["edicion"];
-				$precio = $fila["precio"];
-				$genero = $fila["genero"];
-				$paginas = $fila["paginas"];
-				$tipo = $fila["tipo"];
-				$editorial = $fila["editorial"];
+						echo "<th scope='col'> Titulo </th>";
+						echo "<th scope='col'> Autor </th>";
+						echo "<th scope='col'> Publicacion </th>";
+						echo "<th scope='col'> Edicion </th>";
+						echo "<th scope='col'> Precio </th>";
+						echo "<th scope='col'> Genero </th>";
+						echo "<th scope='col'> Paginas </th>";
+						echo "<th scope='col'> Libros </th>";
+						echo "<th scope='col'> Editorial</th>";
+						echo "<th scope='col'> Modificar </th>";
+						echo "<th scope='col'> Borrar </td>";
 
-				echo "<tr>";
-				echo "<td>" . $titulo . "</td>";
-				echo "<td>" . $autor . "</td>";
-				echo "<td>" . $publicacion . "</td>";
-				echo "<td>" . $edicion . "</td>";
-				echo "<td>" . $precio . "</td>";
-				echo "<td>" . $genero . "</td>";
-				echo "<td>" . $paginas . "</td>";
-				echo "<td>" . $tipo . "</td>";
-				echo "<td>" . $editorial . "</td>";
-				echo "<td><a class='far fa-edit btn' href='./modificar/principal.php?id=$id' ></a></td>";
-				echo "<td><a class='far fa-trash-alt btn' href='./eliminar/principal.php'></a></td>";
-				echo "</tr>";
+					echo "</tr>";
 
-			}
+				echo "</thead>";
 
-			echo "</table>";
+				while ($fila = $resultado->fetch_assoc()) {
+
+					$id = $fila["id"];
+					$titulo = $fila["titulo"];
+					$autor = $fila["autor"];
+					$publicacion = $fila["publicacion"];
+					$edicion = $fila["edicion"];
+					$precio = $fila["precio"];
+					$genero = $fila["genero"];
+					$paginas = $fila["paginas"];
+					$tipo = $fila["tipo"];
+					$editorial = $fila["editorial"];
+
+					echo "<tr>";
+
+						echo "<td scope='row'>" . $titulo . "</td>";
+						echo "<td>" . $autor . "</td>";
+						echo "<td>" . $publicacion . "</td>";
+						echo "<td>" . $edicion . "</td>";
+						echo "<td>" . $precio . "</td>";
+						echo "<td>" . $genero . "</td>";
+						echo "<td>" . $paginas . "</td>";
+						echo "<td>" . $tipo . "</td>";
+						echo "<td>" . $editorial . "</td>";
+						echo "<td><a class='far fa-edit btn' href='./modificar/principal.php?id=$id' ></a></td>";
+						echo "<td><a class='far fa-trash-alt btn' href='./eliminar/principal.php'></a></td>";
+						
+					echo "</tr>";
+
+				}
+
+				echo "</table>";
+
+			echo "</div>";
 		
 		}
 
 		?>
 
-		<a class="btn btn-outline-info btn-group-lg btn-block container" href="./registro-producto/alta_libro.html" role="button">Registrar un libro</a>
+		<div class="mx-5 btn btn-lg btn-block">
+
+			<a class="btn btn-outline-info container" href="./registro-producto/alta_libro.html" role="button">Registrar un libro</a>
+
+		</div>
 
 	</div>
 

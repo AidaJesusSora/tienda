@@ -25,18 +25,18 @@
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
 		  <span class="navbar-toggler-icon"></span>
 		</button>
-		<a class="navbar-brand" href="./../../usuario-administrador.php">BookMarket</a>
+		<a class="navbar-brand text-white" href="./../../usuario-administrador.php">BookMarket</a>
 	  
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 		  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-			<li class="nav-item active">
-				<a class="nav-link" href="./../../libros-administrador/libros-administrador.php">Libros</a>
+			<li class="nav-item">
+				<a class="nav-link text-white" href="./../../libros-administrador/libros-administrador.php">Libros</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="../../usuarios-administrador/usuarios-administrador.php">Usuarios</a>
+				<a class="nav-link text-white" href="../../usuarios-administrador/usuarios-administrador.php">Usuarios</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" type="button" data-toggle="modal" data-target="#desconexion"
+				<a class="nav-link text-white" type="button" data-toggle="modal" data-target="#desconexion"
 				onclick="funcionAlerta()">Log out</a>
 			</li>
 		  </ul>
