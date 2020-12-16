@@ -2,7 +2,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link href="../estilo/style_interior_web.css" rel="stylesheet" type="text/css">
+	<link href="./style/admin-style.css" rel="stylesheet" type="text/css">
 
 	<!-- Bootstrap link -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -11,6 +11,12 @@
 	<!-- JavaScript Link -->
 	<script type="text/javascript" src="./../js/java-script.js"> </script>
 </head>
+
+<?php
+
+	include './../comprovaciones-formularios/login.php';
+
+?>
 
 <body>
 

@@ -33,8 +33,11 @@ $logueado=0;
 
 	$instruccion = "select count(*) as cuantos from usuarios where nickname = '$nickname'";
 	$resultado = mysqli_query($con, $instruccion);
+
 		while ($fila = $resultado->fetch_assoc()) {
+
 			$numero=$fila["cuantos"];
+
 		} 
 		
 		if ($numero==0) {
@@ -48,7 +51,9 @@ $logueado=0;
 			$resultado = mysqli_query($con, $instruccion);
 
 				while ($fila = $resultado->fetch_assoc()) {
+
 					$numero=$fila["cuantos"];
+
 				}
 	
 				if($numero==0) {
@@ -74,8 +79,6 @@ $logueado=0;
 
 						} else {
 
-							echo "patata:";
-
 							$instruccion = "select usuario as cuantos from usuarios where correo = '$correo'";
 							$resultado = mysqli_query($con, $instruccion);
 							
@@ -85,20 +88,19 @@ $logueado=0;
 									
 								}
 
-								echo "adeu:";
-
-
 							if ($usuario != 0) {
 
 								// Conexion del administrador
+								$_SESSION["nickname"]=$nickname;
 								$logueado=1;
-								header ("Location: ./../administrador/usuario-administrador.html");
+								header ("Location: ./../administrador/usuario-administrador.php/");
 
 							} else {
 
 								// Conexion del usuario normal
+								$_SESSION["nickname"]=$nickname;
 								$logueado=1;
-								header ("Location: ./../registrado/usuario-conectado.html");
+								header ("Location: ./../registrado/usuario-conectado.php");
 
 							}
 
