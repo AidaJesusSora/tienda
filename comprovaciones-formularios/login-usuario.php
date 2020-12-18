@@ -17,7 +17,7 @@ session_start();
 	} else {
 		
 		mysqli_set_charset ($con, "utf8");
-		echo "Se ha conectado a la base de datos" . "<br>";
+		//echo "Se ha conectado a la base de datos" . "<br>";
 		
 	}
 
@@ -28,13 +28,13 @@ session_start();
 
 	// Comprovacion si el usuario esta logeado
 
-    if (isset($_SESSION['nickname']) && $resultado->fetch_assoc() == 0 ) {
+    if (isset($_SESSION['nickname'])) {
 
 		$nickname=$_SESSION["nickname"];
 
     } else {
 
-        header('Location: ./../fallos/sin-permiso.html');
+        header('Location: http://localhost/tienda/fallos/sin-permiso.html');
 
         die();
 

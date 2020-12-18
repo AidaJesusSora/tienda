@@ -1,11 +1,22 @@
+<?php
+
+	include './../../comprovaciones-formularios/login-usuario.php';
+
+?>
+
 <html>
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link href="./../estilo/style_interior_web.css" rel="stylesheet" type="text/css">
+	<link href="./../style/style-usuario.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 	<script type="text/javascript" src="./../js/java-script.js"> </script>
+
+	<!-- Script para menu mobil -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </head>
 
@@ -168,29 +179,31 @@
 
 		}
 
-		echo"<div class='row'>";
+		echo "<div class='table-responsive mr-5 ml-5'>";
 		
-			echo "<table class='table table-striped ml-5 mr-5'>";
+			echo "<table class='table table-striped'>";
 				$instruccion = "SELECT * FROM libros WHERE 1 ORDER BY $orden";
 				$resultado = mysqli_query($con, $instruccion);
-		
-				echo "<tr>";
-				echo "<th colspan='10' class='text-center'>Libros</th>";
-				echo "</tr>";
 
-				echo "<tr>";
-				echo "<td> Titulo </td>";
-				echo "<td> Autor </td>";
-				echo "<td> Publicacion </td>";
-				echo "<td> Edicion </td>";
-				echo "<td> Precio </td>";
-				echo "<td> Genero </td>";
-				echo "<td> Paginas </td>";
-				echo "<td> Tipo </td>";
-				echo "<td> Editorial</td>";
-				echo "<td> Carrito </td>";
-				echo "</tr>";
-		
+				echo "<thead class='thead-light'>";
+	
+					echo "<tr>";
+
+						echo "<th scope='col'> Titulo </th>";
+						echo "<th scope='col'> Autor </th>";
+						echo "<th scope='col'> Publicacion </th>";
+						echo "<th scope='col'> Edicion </th>";
+						echo "<th scope='col'> Precio </th>";
+						echo "<th scope='col'> Genero </th>";
+						echo "<th scope='col'> Paginas </th>";
+						echo "<th scope='col'> Tipo </th>";
+						echo "<th scope='col'> Editorial</th>";
+						echo "<th scope='col'> Carrito </th>";
+
+					echo "</tr>";
+
+				echo "</thead>";
+				
 				while ($fila = $resultado->fetch_assoc()) {
 		
 					$id = $fila["id"];
@@ -205,32 +218,30 @@
 					$editorial = $fila["editorial"];
 		
 					echo "<tr>";
-					echo "<td>" . $titulo . "</td>";
-					echo "<td>" . $autor . "</td>";
-					echo "<td>" . $publicacion . "</td>";
-					echo "<td>" . $edicion . "</td>";
-					echo "<td>" . $precio . "</td>";
-					echo "<td>" . $genero . "</td>";
-					echo "<td>" . $paginas . "</td>";
-					echo "<td>" . $tipo . "</td>";
-					echo "<td>" . $editorial . "</td>";
-					echo "<td><a class='fas fa-shopping-cart btn' href='./carrito/principal.php?id=$id' ></a></td>";
-					echo "</tr>";
+						echo "<td>" . $titulo . "</td>";
+						echo "<td>" . $autor . "</td>";
+						echo "<td>" . $publicacion . "</td>";
+						echo "<td>" . $edicion . "</td>";
+						echo "<td>" . $precio . "</td>";
+						echo "<td>" . $genero . "</td>";
+						echo "<td>" . $paginas . "</td>";
+						echo "<td>" . $tipo . "</td>";
+						echo "<td>" . $editorial . "</td>";
+						echo "<td><a class='fas fa-shopping-cart btn' href='./../carrito/principal.php?id=$id'></a></td>";
+					echo "</tr>";	
 		
 				}
 		
-				echo "</table>";
+			echo "</table>";
 
-			echo "</div>";
+		echo "</div>";
 
 	}
 				
 		?>
-        
+
 	</div>
 
 </body>
-
-<footer class="mt-4"> Aida Jesus Sora </footer>
 
 </html>

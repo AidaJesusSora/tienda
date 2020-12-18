@@ -1,0 +1,60 @@
+* {
+    font-family: 'Arial', Helvetica, Sans-serif;
+}
+
+.header {
+    background-image: url(./../img/slider.jpg);
+    color:white;
+    height: 250px;
+    text-align: center;
+}
+
+.h1 {
+    position: relative;
+	padding-top: 100px;
+    text-align: center;
+    font-size: 50px !important;
+}
+
+select .form-control {
+    float: left !important;
+    width: 70% !important;
+    margin-right: 20px !important;
+}
+
+#sec-random {
+    background-color: #d5d5de;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.col-left {
+	width: 49%;
+	float:left;
+	margin-right:1%;
+}
+
+.col-right {
+	width:49%;
+	float:left;
+}
+
+.col-left-admin {
+	width: 25%;
+	float:left;
+	margin-right:1%;
+}
+
+.col-right-admin {
+	width:25%;
+	float:left;
+}

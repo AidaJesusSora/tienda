@@ -1,3 +1,9 @@
+<?php
+
+	include './../comprovaciones-formularios/login-administrador.php';
+
+?>
+
 <html>
 
 <head>

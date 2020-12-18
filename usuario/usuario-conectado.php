@@ -1,11 +1,15 @@
+<?php
 
+	include './../comprovaciones-formularios/login-usuario.php';
+
+?>
 
 <html>
 
 <head>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link href="../estilo/style_interior_web.css" rel="stylesheet" type="text/css">
+	<link href="./style/style-usuario.css" rel="stylesheet" type="text/css">
 	
 	<!-- Link Bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -13,6 +17,11 @@
 	
 	<!-- Link JavaScript -->
 	<script type="text/javascript" src="./../js/java-script.js"> </script>
+
+	<!-- Script para menu mobil -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </head>
 
@@ -24,7 +33,7 @@
 
 	</header>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
 		  <span class="navbar-toggler-icon"></span>
 		</button>
@@ -33,13 +42,13 @@
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 		  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 			<li class="nav-item active">
-				<a class="nav-link" href="./../libros/libros.php">Libros</a>
+				<a class="nav-link" href="http://localhost/tienda/usuario/libros/libros.php">Libros</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="./../carrito/carrito.html">Carrito</a>
+				<a class="nav-link" href="http://localhost/tienda/usuario/carrito/carrito.php">Carrito</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="./../cuenta/cuenta-usuario.html">Mi cuenta</a>
+				<a class="nav-link" href="http://localhost/tienda/usuario/cuenta/cuenta-usuario.html">Mi cuenta</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" type="button" data-toggle="modal" data-target="#desconexion"
@@ -61,7 +70,7 @@
 				<br>
 				<a class="btn btn-outline-info btn-group-lg btn-block container" href="./../libros/libros.php" role="button">Ver los libros</a>
 			</div>
-			<div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0"><img src="./../img/books.jpg" class="img-fluid"></div>
+			<div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0"><img src="./img/books.jpg" class="img-fluid"></div>
 	
 		</div>
 	

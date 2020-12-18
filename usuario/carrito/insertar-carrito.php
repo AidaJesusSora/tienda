@@ -4,7 +4,6 @@ class insert_carrito {
 
 	//Parámetros que vienen del POST
 
-	public $id;
 	
 	//Parámetros de conexión
 
@@ -32,7 +31,20 @@ class insert_carrito {
 				
 			}
 
-		$sql = "CREATE TABLE  from libros where id='$id'";
+		$select ="SELECT * FROM libros WHERE id=$id";
+		$resultado = mysqli_query($con, $select);
+
+		while ($fila = $resultado->fetch_assoc()) {
+
+			$id = $fila["id"];
+			$titulo = $fila["titulo"];
+			$precio = $fila["precio"];
+
+		}
+
+		$nickname = $_SESSION['nickname'];
+
+		$sql = "INSERT INTO carrito VALUES ('$id','$titulo','$precio','$nickname')";
 		$con->query($sql) or die ("Error".mysqli_error($con));
 
 		if(!$sql) {
@@ -41,7 +53,7 @@ class insert_carrito {
 				
 		} else {
 			
-			header ("Location: ./../libros-administrador.php");
+			header ("Location: ./carrito.php");
 							
 		}
 			
