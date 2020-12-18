@@ -24,31 +24,38 @@
                     
                 }
     
+                // Creamos la tabla que vera el usuario al descargarse el archivo
+
                 echo "<table border='1' width='25%'>";
                 $instruccion = "SELECT paginas FROM libros WHERE 1";
                 $resultado = mysqli_query($con, $instruccion);
     
-                echo "<tr>";
-                echo "<th> Paginas </th>";
+                    echo"<thead>";
 
-                echo "</tr>";
-    
-                while ($fila = $resultado->fetch_assoc()) {
-    
-                    $paginas = $fila["paginas"];
-    
-                    echo "<tr>";
-                    echo "<td>" . $paginas . "</td>";
-                    echo "</tr>";
-    
-                }
+                        echo "<tr>";
+                            echo "<th> Paginas </th>";
+                        echo "</tr>";
+
+                    echo"</thead>";
+        
+                    while ($fila = $resultado->fetch_assoc()) {
+        
+                        $paginas = $fila["paginas"];
+        
+                        echo"<tbody>";
+
+                            echo "<tr>";
+                                echo "<td>" . $paginas . "</td>";
+                            echo "</tr>";
+
+                        echo"</tbody>";
+        
+                    }
     
                 echo "</table>";
 
                 header('Content-type: application/vnd.ms-excel;charset=iso-8859-15');
                 header('Content-disposition: attachment; filename=paginas-libros.xls');
-            
-            
 
         }
 

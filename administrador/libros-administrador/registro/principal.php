@@ -2,7 +2,7 @@
 
 //Parámetros que vienen del POST
 
-require_once("datos_libro.php");
+require_once("datos-libro.php");
 
 	$objUsuario = new books;
 	$objUsuario->validar_titulo($_POST["titulo"]);

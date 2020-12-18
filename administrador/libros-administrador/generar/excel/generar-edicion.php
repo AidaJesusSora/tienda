@@ -23,32 +23,39 @@
                     mysqli_set_charset($con, "utf8");
 
                 }
+
+                // Creamos la tabla que vera el usuario cuando se descargue el archivo
     
                 echo "<table border='1' width='25%'>";
                 $instruccion = "SELECT edicion FROM libros WHERE 1";
                 $resultado = mysqli_query($con, $instruccion);
-    
-                echo "<tr>";
-                echo "<th> Edición </th>";
 
-                echo "</tr>";
-    
-                while ($fila = $resultado->fetch_assoc()) {
-    
-                    $edicion = $fila["edicion"];
-    
-                    echo "<tr>";
-                    echo "<td>" . $edicion . "</td>";
-                    echo "</tr>";
-    
-                }
+                    echo"<thead>";
+
+                        echo "<tr>";
+                            echo "<th> Edición </th>";
+                        echo "</tr>";
+
+                    echo"</thead>";
+        
+                    while ($fila = $resultado->fetch_assoc()) {
+        
+                        $edicion = $fila["edicion"];
+        
+                        echo"<tbody>";
+
+                            echo "<tr>";
+                                echo "<td>" . $edicion . "</td>";
+                            echo "</tr>";
+
+                            echo"</tbody>";
+        
+                    }
     
                 echo "</table>";
 
                 header('Content-type: application/vnd.ms-excel;charset=iso-8859-15');
                 header('Content-disposition: attachment; filename=edicion-libros.xls');
-            
-            
 
         }
 

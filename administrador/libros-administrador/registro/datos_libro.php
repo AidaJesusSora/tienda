@@ -5,7 +5,6 @@ class books {
 	//Parámetros que vienen del POST
 
 	public $errores = 0;
-
 	public $titulo = null;
 	public $autor = null;
 	public $publicacion = null;
@@ -141,6 +140,7 @@ class books {
 			$this->errores++;
 
 		}
+
 	}
 	
 	/* Genero */
@@ -210,7 +210,6 @@ class books {
 
 	}
 
-	
 	/* Editorial */
 	
 	public function getEditorial() {
@@ -254,12 +253,11 @@ class books {
 
 			echo ("<br>Hay errores, vuelve a registrarte, gracias. <br>");
 			echo ("<span>");
-			echo ("(<a href='./alta_usuario.html'>Registar libro</a>");
+			echo ("(<a href='./alta-usuario.html'>Registar libro</a>");
 			echo (" de nuevo");
 			die ("</span>)");
 		}
-
-		
+	
 	}
 	
 	function llamar_bbdd() {

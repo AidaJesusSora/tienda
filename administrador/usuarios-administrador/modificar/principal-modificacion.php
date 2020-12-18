@@ -2,7 +2,7 @@
 
 //Parámetros que vienen del POST
 
-require_once("modificar_usuario.php");
+require_once("datos-modificar.php");
 
 
 	$objUsuario = new modificar_usuario_bbdd;

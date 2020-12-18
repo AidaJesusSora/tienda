@@ -17,37 +17,48 @@
                 if (!$con) {
     
                     die("Con se ha podido realizar la conexión: " . mysqli_connect_error() . "<br>");
+
                 } else {
     
                     mysqli_set_charset($con, "utf8");
                 }
     
-                echo "<table border='1' width='25%'>";
+                // Creamos archivo XML
+
+                $xml = new XMLWriter();
+                $xml->openMemory();
+                $xml->setIndent(true);
+                $xml->setIndentString('        ');
+                $xml->startDocument('1.0', 'UTF-8');
+               
                 $instruccion = "SELECT paginas FROM libros WHERE 1";
                 $resultado = mysqli_query($con, $instruccion);
     
-                echo "<tr>";
-                echo "<th> Paginas </th>";
+                $xml->startElement("catalogo"); 
 
-                echo "</tr>";
-    
-                while ($fila = $resultado->fetch_assoc()) {
-    
-                    $paginas = $fila["paginas"];
-    
-                    echo "<tr>";
-                    echo "<td>" . $paginas . "</td>";
-                    echo "</tr>";
-    
-                }
-    
-                echo "</table>";
+                    $xml->startElement("libro");
 
-            
-                header('Content-type: application/vnd.ms-excel;charset=iso-8859-15');
-                header('Content-disposition: attachment; filename=paginas-libros.xls');
-            
-            
+                        while ($fila = $resultado->fetch_assoc()) {
+    
+                            $paginas = $fila["paginas"];
+                            $xml->writeElement("paginas", $paginas);
+                        }
+                    
+                    $xml->endElement();
+
+                $xml->endElement();
+
+                $content = $xml->outputMemory();
+
+                ob_end_clean();
+                ob_start();
+                header('Content-Type: application/xml; charset=UTF-8');
+                header('Content-Encoding: UTF-8');
+                header("Content-Disposition: attachment;filename=paginas-libros.xml");
+                header('Expires: 0');
+                header('Pragma: cache');
+                header('Cache-Control: private');
+                echo $content;
 
         }
 

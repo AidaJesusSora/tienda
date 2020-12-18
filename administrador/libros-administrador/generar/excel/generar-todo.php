@@ -24,21 +24,27 @@
                     
                 }
 
+                // Creamos la tabla para cuando el usuario se descargue el archivo
+
                 echo "<table border='1' width='100%'>";
                 $instruccion = "SELECT * FROM libros WHERE 1";
                 $resultado = mysqli_query($con, $instruccion);
 
+                echo"<thead>";
+
                     echo "<tr>";
-                    echo "<td width='10%'> Titulo </td>";
-                    echo "<td width='10%'> Autor </td>";
-                    echo "<td width='10%'> Publicacion </td>";
-                    echo "<td width='10%'> Edicion </td>";
-                    echo "<td width='10%'> Precio </td>";
-                    echo "<td width='10%'> Genero </td>";
-                    echo "<td width='10%'> Paginas </td>";
-                    echo "<td width='10%'> Libros </td>";
-                    echo "<td width='10%'> Editorial</td>";
+                        echo "<td width='10%'> Titulo </td>";
+                        echo "<td width='10%'> Autor </td>";
+                        echo "<td width='10%'> Publicacion </td>";
+                        echo "<td width='10%'> Edicion </td>";
+                        echo "<td width='10%'> Precio </td>";
+                        echo "<td width='10%'> Genero </td>";
+                        echo "<td width='10%'> Paginas </td>";
+                        echo "<td width='10%'> Libros </td>";
+                        echo "<td width='10%'> Editorial</td>";
                     echo "</tr>";
+
+                echo"</thead>";
 
                     while ($fila = $resultado->fetch_assoc()) {
 
@@ -53,17 +59,21 @@
                         $tipo = $fila["tipo"];
                         $editorial = $fila["editorial"];
 
-                        echo "<tr>";
-                        echo "<td>" . $titulo . "</td>";
-                        echo "<td>" . $autor . "</td>";
-                        echo "<td>" . $publicacion . "</td>";
-                        echo "<td>" . $edicion . "</td>";
-                        echo "<td>" . $precio . "</td>";
-                        echo "<td>" . $genero . "</td>";
-                        echo "<td>" . $paginas . "</td>";
-                        echo "<td>" . $tipo . "</td>";
-                        echo "<td>" . $editorial . "</td>";
-                        echo "</tr>";
+                        echo"<tbody>";
+
+                            echo "<tr>";
+                                echo "<td>" . $titulo . "</td>";
+                                echo "<td>" . $autor . "</td>";
+                                echo "<td>" . $publicacion . "</td>";
+                                echo "<td>" . $edicion . "</td>";
+                                echo "<td>" . $precio . "</td>";
+                                echo "<td>" . $genero . "</td>";
+                                echo "<td>" . $paginas . "</td>";
+                                echo "<td>" . $tipo . "</td>";
+                                echo "<td>" . $editorial . "</td>";
+                            echo "</tr>";
+
+                        echo"</tbody>";
 
                     }
 

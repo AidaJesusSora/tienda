@@ -2,7 +2,7 @@
 
 //Parámetros que vienen del POST
 
-require_once("./form_modificar_usuario.php");
+require_once("./modificar-usuario-admin.php");
 
 $id=$_GET['id'];
 

@@ -24,22 +24,31 @@
 
                 }
     
+                // Creamos la tabla que vera el usuario al descargarse el archivo
+
                 echo "<table border='1' width='25%'>";
                 $instruccion = "SELECT publicacion FROM libros WHERE 1";
                 $resultado = mysqli_query($con, $instruccion);
     
-                echo "<tr>";
-                echo "<th> Publicacion </th>";
+                echo"<thead>";
 
-                echo "</tr>";
-    
+                    echo "<tr>";
+                        echo "<th> Publicacion </th>";
+                    echo "</tr>";
+
+                echo"</thead>";
+                
                 while ($fila = $resultado->fetch_assoc()) {
     
                     $publicacion = $fila["publicacion"];
-    
-                    echo "<tr>";
-                    echo "<td>" . $publicacion . "</td>";
-                    echo "</tr>";
+                    
+                    echo"<tbody>";
+
+                        echo "<tr>";
+                            echo "<td>" . $publicacion . "</td>";
+                        echo "</tr>";
+
+                    echo"</tbody>";
     
                 }
     
@@ -48,8 +57,6 @@
                 header('Content-type: application/vnd.ms-excel;charset=iso-8859-15');
                 header('Content-disposition: attachment; filename=publicacion-libros.xls');
             
-            
-
         }
 
     }

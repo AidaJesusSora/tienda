@@ -24,32 +24,39 @@
 
                 }
     
+                // Creamos la tabla que vera el usuario cuando se descargue el archivo
+
                 echo "<table border='1' width='25%'>";
                 $instruccion = "SELECT autor FROM libros WHERE 1";
                 $resultado = mysqli_query($con, $instruccion);
     
-                echo "<tr>";
-                echo "<th> Autor </th>";
+                    echo"<thead>";
 
-                echo "</tr>";
-    
-                while ($fila = $resultado->fetch_assoc()) {
-    
-                    $autor = $fila["autor"];
-    
-                    echo "<tr>";
-                    echo "<td>" . $autor . "</td>";
-                    echo "</tr>";
-    
-                }
-    
+                        echo "<tr>";
+                            echo "<th> Autor </th>";
+                        echo "</tr>";
+        
+                    echo"</thead>";
+
+                    while ($fila = $resultado->fetch_assoc()) {
+        
+                        $autor = $fila["autor"];
+
+                        echo"<tbody>";
+        
+                            echo "<tr>";
+                                echo "<td>" . $autor . "</td>";
+                            echo "</tr>";
+
+                        echo"</tbody>";
+        
+                    }
+        
                 echo "</table>";
             
                 header('Content-type: application/vnd.ms-excel;charset=iso-8859-15');
                 header('Content-disposition: attachment; filename=autor-libros.xls');
             
-            
-
         }
 
     }

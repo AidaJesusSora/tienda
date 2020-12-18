@@ -263,15 +263,15 @@ class dades {
 
 		/* Usuario */
 
-		public function getUser($user) {
+		public function getUser($usuario) {
 
-			$this->user = $user;
+			$this->usuario = $usuario;
 
 		}
 
-		public function setUser($user) {
+		public function setUser($usuario) {
 
-			$this->user = $user;
+			$this->usuario = $usuario;
 
 		}
 

@@ -41,6 +41,7 @@ class eliminar_books {
 				
 		} else {
 			
+			//Redireccionamos a libros
 			header ("Location: ./../libros-administrador.php");
 							
 		}

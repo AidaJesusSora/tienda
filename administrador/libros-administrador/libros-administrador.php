@@ -6,10 +6,11 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 	<script type="text/javascript" src="./../../js/java-script.js"> </script>
+	
+	<!-- Script para menu mobil -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -40,7 +41,6 @@
 			</li>
 		  </ul>
 		</div>
-		
 	</nav>
 
 	<br>
@@ -187,7 +187,7 @@
 						echo "<th scope='col'> Precio </th>";
 						echo "<th scope='col'> Genero </th>";
 						echo "<th scope='col'> Paginas </th>";
-						echo "<th scope='col'> Libros </th>";
+						echo "<th scope='col'> Tipo </th>";
 						echo "<th scope='col'> Editorial</th>";
 						echo "<th scope='col'> Modificar </th>";
 						echo "<th scope='col'> Borrar </td>";
@@ -237,14 +237,12 @@
 
 		<div class="mx-5 btn btn-lg btn-block">
 
-			<a class="btn btn-outline-info container" href="./registro-producto/alta_libro.html" role="button">Registrar un libro</a>
+			<a class="btn btn-outline-info container" href="./registro/alta-libro.php" role="button">Registrar un libro</a>
 
 		</div>
 
 	</div>
 
 </body>
-
-<footer class="mt-4"> Aida Jesus Sora </footer>
 
 </html>

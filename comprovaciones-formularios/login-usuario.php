@@ -21,17 +21,20 @@ session_start();
 		
 	}
 
-// Comprovacion si el usuario esta logeado
+	$nickname=$_SESSION["nickname"];
 
-    if (isset($_SESSION['nickname']) || $_SESSION['user'] == 1 ) {
+	$instruccion = "SELECT usuario FROM usuarios WHERE nickname = '$nickname'";
+	$resultado = mysqli_query($con, $instruccion);
 
-        echo $_SESSION['nickname'];
+	// Comprovacion si el usuario esta logeado
 
-        $nickname=$_SESSION["nickname"];
+    if (isset($_SESSION['nickname']) && $resultado->fetch_assoc() == 0 ) {
+
+		$nickname=$_SESSION["nickname"];
 
     } else {
 
-        header('Location: ./../fallos/usuario_noregistrado.html');
+        header('Location: ./../fallos/sin-permiso.html');
 
         die();
 

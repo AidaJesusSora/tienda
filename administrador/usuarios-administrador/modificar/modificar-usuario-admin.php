@@ -1,3 +1,9 @@
+<?php
+
+	include './../comprovaciones-formularios/login-administrador.php';
+
+?>
+
 <html>
 
 <head>
@@ -68,7 +74,8 @@
             $con = mysqli_connect($servidor, $usuario_bd, $contrasena, $bd);
             if (!$con) {
 
-                die("Con se ha podido realizar la conexión: " . mysqli_connect_error() . "<br>");
+				die("Con se ha podido realizar la conexión: " . mysqli_connect_error() . "<br>");
+				
             } else {
 
                 mysqli_set_charset($con, "utf8");
@@ -88,7 +95,7 @@
                 $nickname = $fila["nickname"];
                 $correo = $fila["correo"];
 
-            echo "<form action='./principal_usuario_modificar.php?id=$id' method='post' class='container'>
+            echo "<form action='./principal-modificacion.php?id=$id' method='post' class='container'>
 	
 				<div class='col-left'>
 			
@@ -137,8 +144,6 @@
     }
 
     ?>
-
-
 
 </body>
 

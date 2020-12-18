@@ -2,7 +2,7 @@
 
 //Parámetros que vienen del POST
 
-require_once("./form_modificar_libro.php");
+require_once("./modificar-libro-admin.php");
 
 $id=$_GET['id'];
 
