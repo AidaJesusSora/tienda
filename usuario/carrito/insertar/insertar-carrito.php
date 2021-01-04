@@ -53,7 +53,7 @@ class insert_carrito {
 				
 		} else {
 			
-			header ("Location: ./carrito.php");
+			header ("Location: http://localhost:8080/php/tienda-main/usuario/carrito/carrito.php");
 							
 		}
 			

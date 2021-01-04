@@ -17,7 +17,6 @@ session_start();
 	} else {
 		
 		mysqli_set_charset ($con, "utf8");
-		//echo "Se ha conectado a la base de datos" . "<br>";
 		
 	}
 

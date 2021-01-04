@@ -42,10 +42,10 @@
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 		  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 			<li class="nav-item active">
-				<a class="nav-link" href="http://localhost/tienda/usuario/libros/libros.php">Libros</a>
+				<a class="nav-link" href="http://localhost:8080/php/tienda-main/usuario/libros/libros.php">Libros</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="http://localhost/tienda/usuario/carrito/carrito.php">Carrito</a>
+				<a class="nav-link" href="http://localhost:8080/php/tienda-main/usuario/carrito/carrito.php">Carrito</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="http://localhost/tienda/usuario/cuenta/cuenta-usuario.html">Mi cuenta</a>
@@ -55,7 +55,6 @@
 				onclick="funcionAlerta()">Log out</a>
 			</li>
 		  </ul>
-		  
 		</div>
 	</nav>
 
@@ -89,7 +88,6 @@
 		
 	</body>
 	
-	<footer class="mt-4"> Aida Jesus Sora </footer>
 </body>
 
 </html>
