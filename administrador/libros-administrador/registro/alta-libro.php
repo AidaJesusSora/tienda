@@ -1,6 +1,6 @@
 <?php
 
-	include './../comprovaciones-formularios/login-administrador.php';
+	include './../../../comprovacion-usuario/login-administrador.php';
 
 ?>
 
@@ -15,7 +15,7 @@
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 	<!-- Link JavaScript -->
-	<script type="text/javascript" src="../../../js/java-script.js"> </script>
+	<script type="text/javascript" src="./../../../js/java-script.js"> </script>
 
 	<!-- Script para menu mobil -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -41,10 +41,10 @@
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 		  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 			<li class="nav-item">
-				<a class="nav-link text-white" href="../libros-administrador.php">Libros</a>
+				<a class="nav-link text-white" href="./../libros-administrador.php">Libros</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-white" href="../../usuarios-administrador/usuarios-administrador.php">Usuarios</a>
+				<a class="nav-link text-white" href="./../../usuarios-administrador/usuarios-administrador.php">Usuarios</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link text-white" type="button" data-toggle="modal" data-target="#desconexion"

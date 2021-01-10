@@ -1,6 +1,6 @@
 <?php
 
-	include './../comprovaciones-formularios/login-usuario.php';
+	include './../comprovacion-usuario/login-usuario.php';
 
 ?>
 
@@ -41,14 +41,14 @@
 	  
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 		  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-			<li class="nav-item active">
-				<a class="nav-link" href="http://localhost:8080/php/tienda-main/usuario/libros/libros.php">Libros</a>
+			<li class="nav-item">
+				<a class="nav-link" href="./libros/libros.php">Libros</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="http://localhost:8080/php/tienda-main/usuario/carrito/carrito.php">Carrito</a>
+				<a class="nav-link" href="./carrito/carrito.php">Carrito</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="http://localhost/tienda/usuario/cuenta/cuenta-usuario.html">Mi cuenta</a>
+				<a class="nav-link" href="./cuenta/cuenta-usuario.php">Mi cuenta</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" type="button" data-toggle="modal" data-target="#desconexion"
@@ -67,7 +67,7 @@
 			<div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At ad dolorum mollitia consectetur excepturi enim unde nisi eaque est, autem vero blanditiis qui nemo voluptatum maxime fugit eligendi iure reprehenderit sint, neque fuga hic! Nisi dolore perspiciatis voluptate, vero eveniet ratione aspernatur fugiat assumenda exercitationem libero tempore veritatis minima at harum reprehenderit quam id voluptatibus perferendis quia nobis cum ab labore vitae. Perspiciatis error quo distinctio aspernatur deleniti minus similique incidunt velit dolorem quas impedit et, at, tenetur eius ea voluptatem hic sapiente veniam dolores, delectus quam. A necessitatibus, blanditiis, earum consectetur aliquid corporis, quis ducimus et dolores modi enim.</p>
 				<br>
-				<a class="btn btn-outline-info btn-group-lg btn-block container" href="./../libros/libros.php" role="button">Ver los libros</a>
+				<a class="btn btn-outline-info btn-group-lg btn-block container" href="./libros/libros.php" role="button">Ver los libros</a>
 			</div>
 			<div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0"><img src="./img/books.jpg" class="img-fluid"></div>
 	

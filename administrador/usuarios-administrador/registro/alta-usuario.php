@@ -1,6 +1,6 @@
 <?php
 
-	include './../comprovaciones-formularios/login-administrador.php';
+	include './../../../comprovacion-usuario/login-administrador.php';
 
 ?>
 
@@ -43,7 +43,7 @@
 				<a class="nav-link text-white" href="./../../libros-administrador/libros-administrador.php">Libros</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-white" href="../../usuarios-administrador/usuarios-administrador.php">Usuarios</a>
+				<a class="nav-link text-white" href="./../../usuarios-administrador/usuarios-administrador.php">Usuarios</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link text-white" type="button" data-toggle="modal" data-target="#desconexion"

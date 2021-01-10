@@ -1,14 +1,14 @@
 <?php
 
-class eliminar_books {
+class eliminar_producto {
 
 	//Parámetros que vienen del POST
 
-	public $id;
+	public $id_fila;
 	
 	//Parámetros de conexión
 
-	function llamar_bbdd($id) {
+	function llamar_bbdd($id_fila) {
 
 		$servidor="localhost";
 		$usuario_bd="root";
@@ -31,7 +31,7 @@ class eliminar_books {
 				
 			}
 
-		$sql = "DELETE from libros where id='$id'";
+		$sql = "DELETE from libros where idfila='$id_fila'";
 		$con->query($sql) or die ("Error".mysqli_error($con));
 
 		if(!$sql) {
@@ -41,7 +41,7 @@ class eliminar_books {
 		} else {
 			
 			//Redireccionamos a libros
-			header ("Location: ./../libros-administrador.php");
+			header ("Location: ./../carrito.php");
 							
 		}
 			

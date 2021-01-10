@@ -17,7 +17,6 @@ session_start();
 	} else {
 		
 		mysqli_set_charset ($con, "utf8");
-		echo "Se ha conectado a la base de datos" . "<br>";
 		
 	}
 
@@ -28,7 +27,9 @@ session_start();
 
 	// Comprovacion si el usuario esta logeado
 
-    if (isset($_SESSION['nickname']) && $resultado->fetch_assoc() == 1 ) {
+	$tipo = $resultado->fetch_assoc();
+
+	if (isset($_SESSION['nickname']) && $tipo['usuario'] == 1 ) {
 
 		$nickname=$_SESSION["nickname"];
 

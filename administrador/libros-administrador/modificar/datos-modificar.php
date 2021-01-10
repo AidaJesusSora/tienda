@@ -36,7 +36,6 @@ class modificar_books_bbdd {
 			else {
 				
 				mysqli_set_charset($con,"utf8");
-				echo "Te has conectado a la BBDD<br>";
 				$_SESSION["con"]=$con;
 				
 			}
@@ -52,7 +51,7 @@ class modificar_books_bbdd {
 				 
 			} else {
 				
-				header ("Location: ../libros-administrador.php");
+				header ("Location: ./../libros-administrador.php");
 								
 			}
 			

@@ -25,7 +25,6 @@ class eliminar_users {
 		} else {
 
 			mysqli_set_charset($con, "utf8");
-			echo "Te has conectado a la BBDD<br>";
 			$_SESSION["con"] = $con;
 
 		}

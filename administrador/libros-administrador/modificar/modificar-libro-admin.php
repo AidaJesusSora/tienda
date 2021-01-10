@@ -1,6 +1,6 @@
 <?php
 
-	include './../comprovaciones-formularios/login-administrador.php';
+	include './../../../comprovacion-usuario/login-administrador.php';
 
 ?>
 
@@ -41,10 +41,10 @@
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 		  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 			<li class="nav-item">
-                <a class="nav-link text-white" href="../libros-administrador.php">Libros</a>
+                <a class="nav-link text-white" href="./../libros-administrador.php">Libros</a>
 			</li>
 			<li class="nav-item">
-                <a class="nav-link text-white" href="../../usuarios-administrador/usuarios-administrador.php">Usuarios</a>
+                <a class="nav-link text-white" href="./../../usuarios-administrador/usuarios-administrador.php">Usuarios</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link text-white" type="button" data-toggle="modal" data-target="#desconexion"

@@ -33,7 +33,6 @@ class modificar_usuario_bbdd {
 			else {
 				
 				mysqli_set_charset($con,"utf8");
-				echo "Te has conectado a la BBDD<br>";
 				$_SESSION["con"]=$con;
 				
 			}
@@ -49,7 +48,7 @@ class modificar_usuario_bbdd {
 				 
 			} else {
 				
-				header ("Location: ../usuarios-administrador.php");
+				header ("Location: ./../usuarios-administrador.php");
 								
 			}
 			

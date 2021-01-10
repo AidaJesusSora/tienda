@@ -1,6 +1,6 @@
 <?php
 
-	include './../comprovaciones-formularios/login-administrador.php';
+	include './../comprovacion-usuario/login-administrador.php';
 
 ?>
 
@@ -80,7 +80,7 @@
 
 		<div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
 
-			<img src="./../img/books.jpg" class="img-fluid">
+			<img src="./img/books.jpg" class="img-fluid">
 
 		</div>
 
@@ -105,7 +105,7 @@
 
 	<div class="container-fluid mt-3 row text-justify mb-5">
 
-		<div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0"><img src="./../img/usuarios.jpg" class="img-fluid mb-3"></div>
+		<div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0"><img src="./img/usuarios.jpg" class="img-fluid mb-3"></div>
 
 		<div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
 

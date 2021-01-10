@@ -1,6 +1,6 @@
 <?php
 
-	include './../comprovaciones-formularios/login-administrador.php';
+	include './../../comprovacion-usuario/login-administrador.php';
 
 ?>
 
@@ -77,6 +77,7 @@
 		} else {
 
 			mysqli_set_charset($con, "utf8");
+			
 		}
 
 		// Generacion de la tabla cogiendo los datos del phpmyadmin

@@ -1,6 +1,6 @@
 <?php
 
-	include './../comprovaciones-formularios/login-administrador.php';
+	include './../../comprovacion-usuario/login-administrador.php';
 
 ?>
 
@@ -171,6 +171,7 @@
 			if (!$con) {
 
 				die("Con se ha podido realizar la conexión: " . mysqli_connect_error() . "<br>");
+				
 			} else {
 
 				mysqli_set_charset($con, "utf8");

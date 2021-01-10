@@ -1,6 +1,6 @@
 <?php
 
-	include './../../comprovaciones-formularios/login-usuario.php';
+	include './../../comprovacion-usuario/login-usuario.php';
 
 ?>
 
@@ -11,7 +11,7 @@
 	<link href="./../style/style-usuario.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
-	<script type="text/javascript" src="./../js/java-script.js"> </script>
+	<script type="text/javascript" src="./../../js/java-script.js"> </script>
 
 	<!-- Script para menu mobil -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -32,18 +32,18 @@
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
 		  <span class="navbar-toggler-icon"></span>
 		</button>
-		<a class="navbar-brand" href="#">BookMarket</a>
+		<a class="navbar-brand" href="./../usuario-conectado.php">BookMarket</a>
 	  
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 		  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-			<li class="nav-item active">
-				<a class="nav-link" href="http://localhost/tienda/usuario/libros/libros.php">Libros</a>
+			<li class="nav-item">
+				<a class="nav-link" href="./libros.php">Libros</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="http://localhost:8080/php/tienda-main/usuario/carrito/carrito.php">Carrito</a>
+				<a class="nav-link" href="./../carrito/carrito.php">Carrito</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="http://localhost/tienda/usuario/cuenta/cuenta-usuario.html">Mi cuenta</a>
+				<a class="nav-link" href="./../cuenta/cuenta-usuario.html">Mi cuenta</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" type="button" data-toggle="modal" data-target="#desconexion"
@@ -58,7 +58,7 @@
 
 	<?php
 
-	error_reporting(E_ALL & ~E_NOTICE);
+	error_reporting(E_ALL & ~E_NOTICE); // Eliminacion del warning NOTICE
 
 	$seleccion = 0;
 	$orden = null;
@@ -228,11 +228,11 @@
 							echo "<td>" . $paginas . "</td>";
 							echo "<td>" . $tipo . "</td>";
 							echo "<td>" . $editorial . "</td>";
-							echo "<td><a class='fas fa-shopping-cart btn' href='http://localhost:8080/php/tienda-main/usuario/carrito/insertar/principal.php?id=$id'></a></td>";
+							echo "<td><a class='fas fa-shopping-cart btn' href='./../carrito/insertar/principal.php?id=$id'></a></td>";
 						echo "</tr>";	
 			
 					}
-			
+					
 				echo "</table>";
 
 			echo "</div>";
