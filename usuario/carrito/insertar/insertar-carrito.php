@@ -1,5 +1,7 @@
 <?php
 
+@session_start();
+
 class insert_carrito {
 
 	//Parámetros que vienen del POST
@@ -43,7 +45,7 @@ class insert_carrito {
 
 		$nickname = $_SESSION['nickname'];
 
-		$sql = "INSERT INTO carrito VALUES ('$id','$titulo','$precio','$nickname')";
+		$sql = "INSERT INTO carrito VALUES ('NULL','$id','$titulo','$precio','$nickname')";
 		$con->query($sql) or die ("Error".mysqli_error($con));
 
 		if(!$sql) {
@@ -52,7 +54,7 @@ class insert_carrito {
 				
 		} else {
 			
-			header ("Location: http://localhost:8080/php/tienda-main/usuario/carrito/carrito.php");
+			header ("Location: ./../carrito.php");
 							
 		}
 			

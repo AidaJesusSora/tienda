@@ -33,7 +33,7 @@ session_start();
 
     } else {
 
-        header('Location: http://localhost/tienda/fallos/sin-permiso.html');
+        header('Location: ./../fallos/sin-permiso.html');
 
         die();
 

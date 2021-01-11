@@ -1,6 +1,6 @@
 <?php
 
-	include './../../comprovacion-usuario/login-usuario.php';
+	require ('./../../comprovacion-usuario/login-usuario.php');
 
 ?>
 
@@ -55,81 +55,83 @@
 
 	<?php
 
-listar();
+	error_reporting(E_ALL & ~E_NOTICE); // Eliminacion del warning NOTICE
 
-function listar() {
+	listar();
 
-	// Parámetros de conexión
-	$servidor = "localhost";
-	$usuario_bd = "root";
-	$contrasena = "";
-	$bd = "test";
+	function listar() {
 
-	// realizamos la conexión
-	$con = mysqli_connect($servidor, $usuario_bd, $contrasena, $bd);
-	if (!$con) {
+		// Parámetros de conexión
+		$servidor = "localhost";
+		$usuario_bd = "root";
+		$contrasena = "";
+		$bd = "test";
 
-		die("Con se ha podido realizar la conexión: " . mysqli_connect_error() . "<br>");
+		// realizamos la conexión
+		$con = mysqli_connect($servidor, $usuario_bd, $contrasena, $bd);
+		if (!$con) {
 
-	} else {
+			die("Con se ha podido realizar la conexión: " . mysqli_connect_error() . "<br>");
 
-		mysqli_set_charset($con, "utf8");
+		} else {
+
+			mysqli_set_charset($con, "utf8");
+
+		}
+
+		echo "<div class='row my-5 mx-5'>";
+
+			echo "<div class='table-responsive'>";
+
+				echo "<table class='table table-striped'>";
+
+				$nickname = $_SESSION['nickname'];
+
+				$instruccion = "SELECT * FROM carrito WHERE nickname = '$nickname'";
+				$resultado = mysqli_query($con, $instruccion);
+						
+				echo "<thead class='thead-light'>";
+
+					echo "<tr>";
+
+						//echo "<th scope='col'> # </th>";
+						echo "<th scope='col'> ID Producto </th>";
+						echo "<th scope='col'> Titulo </th>";
+						echo "<th scope='col'> Precio </th>";
+						echo "<th scope='col'> Borrar </td>";
+
+					echo "</tr>";
+
+				echo "</thead>";
+
+				while ($fila = $resultado->fetch_assoc()) {
+
+					$id = $fila["id"];
+					$id_fila = $fila["id_fila"];
+					$titulo = $fila["titulo"];
+					$preu = $fila["preu"];
+
+					echo "<tr>";
+
+						echo "<td scope='row'>" . $id. "</td>";
+						//echo "<td>" . $id . "</td>";
+						echo "<td>" . $titulo . "</td>";
+						echo "<td>" . $preu . "</td>";
+						echo "<td><a class='far fa-trash-alt btn' href='./eliminar/principal.php?id_fila=$id_fila'></a></td>";
+						
+					echo "</tr>";
+
+				}
+
+				echo "</table>";
+
+			echo "</div>";
+		
+		echo "</div>";
 
 	}
 
-	echo "<div class='row my-5 mx-5'>";
-
-		echo "<div class='table-responsive'>";
-
-			echo "<table class='table table-striped'>";
-
-			$nickname = $_SESSION['nickname'];
-
-			$instruccion = "SELECT * FROM carrito WHERE nickname = '$nickname'";
-			$resultado = mysqli_query($con, $instruccion);
-					
-			echo "<thead class='thead-light'>";
-
-				echo "<tr>";
-
-					echo "<th scope='col'> # </th>";
-					echo "<th scope='col'> ID Producto </th>";
-					echo "<th scope='col'> Titulo </th>";
-					echo "<th scope='col'> Precio </th>";
-					echo "<th scope='col'> Borrar </td>";
-
-				echo "</tr>";
-
-			echo "</thead>";
-
-			while ($fila = $resultado->fetch_assoc()) {
-
-				$id = $fila["id"];
-				$id_fila = $fila["id_fila"];
-				$titulo = $fila["titulo"];
-			 	$preu = $fila["preu"];
-
-			 	echo "<tr>";
-
-					echo "<td scope='row'>" . $id_fila . "</td>";
-					echo "<td>" . $id . "</td>";
-			 		echo "<td>" . $titulo . "</td>";
-			 		echo "<td>" . $preu . "</td>";
-			 		echo "<td><a class='far fa-trash-alt btn' href='./eliminar/principal.php?idfila=$id_fila'></a></td>";
-					
-			 	echo "</tr>";
-
-			}
-
-			echo "</table>";
-
-		echo "</div>";
-	
-	echo "</div>";
-
-}
-
-	?>
+		?>
 
 	<br>
 
