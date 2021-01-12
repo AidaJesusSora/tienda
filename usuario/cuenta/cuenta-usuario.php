@@ -7,10 +7,22 @@
 <html>
 
 <head>
+
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link href="./../style/style-usuario.css" rel="stylesheet" type="text/css">
+	
+	<!-- Link Bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	
+	<!-- Link JavaScript -->
+	<script type="text/javascript" src="./../js/java-script.js"> </script>
+
+	<!-- Script para menu mobil -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </head>
 
 <body id="body-background">
@@ -54,7 +66,7 @@
 
 		<div class="container-fluid col-sm-5 offset-sm-2 col-md-6 offset-md-0 float-left">		
 
-			<img src="./../img/mi-cuenta.jpg" class="mx-auto d-block">
+			<img src="./../img/mi-cuenta.jpg" class="mx-auto d-block" width="570px">
 
 		</div>
 
@@ -100,38 +112,75 @@
 
 				echo "<div>";
 
-					echo "<h4 class='text-center'>Datos del usuario</h4>";
+					echo "<h4 class='text-left'>Datos del usuario</h4>";
 
-					echo "<div class='float-left'>";
+					echo "<hr width='75%' class='float-left'>";
 
-						echo "<div class='form-group row'>";
+					echo "<br>";
 
-							echo "<label class='col-sm-2 col-form-label'>Nombre</label> "; 
-					
-							echo "<div class='col-sm-10'>";
+					echo "<div clas='row'>";
+
+						echo "<div class='col-sm-8'>";
+						
+							echo "<div class='card'>";
+
+								echo "<div class='card-body'>";
+
+									echo "<form>";
+										
+										echo "<div class='form-group'>";
+										
+											echo "<label>Nombre</label>";
+											
+											echo "<input type='text' class='form-control' disabled value='$nombre'>";
+
+										echo "</div>";
+
+										echo "<div class='form-group'>";
+										
+											echo "<label>Apellidos</label>";
+										
+											echo "<input type='text' class='form-control' disabled value='$apellidos'>";
+										
+										echo "</div>";
+
+										echo "<div class='form-group'>";
+										
+											echo "<label>Correo</label>";
+										
+											echo "<input type='email' class='form-control' disabled value='$correo'>";
+										
+										echo "</div>";
+
+										echo "<div class='form-group'>";
+										
+											echo "<label>Telefon</label>";
+										
+											echo "<input type='text' class='form-control' disabled value='$telefono'>";
+										
+										echo "</div>";
+
+										echo "<div class='form-group'>";
+										
+											echo "<label>DNI</label>";
+										
+											echo "<input type='text' class='form-control' disabled value='$dni'>";
+										
+										echo "</div>";
+
+										echo "<a href='./modificar/modificar-usuario.php' class='btn btn-primary'>Modificar</a>";
+
+									echo "</form>";
 							
-								echo "<input type='text' readonly class='form-control-plaintext' value='$nombre'>";
+								echo "</div>";
 
 							echo "</div>";
 
 						echo "</div>";
-					
-					  echo "</div>";
 
-					echo "<div class='float-right'>";
-					
-						//echo "<h5><u>Nombre</u></h5> $nombre";
-					
 					echo "</div>";
 
 				echo "</div>";
-
-				// echo "<h4><u>Nombre</u></h4> $nombre";
-				// echo "<h4><u>Apellido</u></h4> $apellidos";
-				// echo "<h4><u>Correo</u></h4> $correo";
-				// echo "<h4><u>Nickname</u></h4> $nickname";
-				// echo "<h4><u>Telefono</u></h4> $telefono";
-				// echo "<h4><u>Edad</u></h4> $edad";
 				
 			}
 
