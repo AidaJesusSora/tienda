@@ -58,7 +58,7 @@
 
 	<br>
 
-	<?php
+<?php
 
 	error_reporting(E_ALL & ~E_NOTICE); // Eliminacion del warning NOTICE
 
@@ -128,6 +128,7 @@
 
 		// Realizamos la conexión
 		$con = mysqli_connect($servidor, $usuario_bd, $contrasena, $bd);
+
 		if (!$con) {
 
 			die("Con se ha podido realizar la conexión: " . mysqli_connect_error() . "<br>");
@@ -221,6 +222,7 @@
 						$editorial = $fila["editorial"];
 			
 						echo "<tr>";
+
 							echo "<td>" . $titulo . "</td>";
 							echo "<td>" . $autor . "</td>";
 							echo "<td>" . $publicacion . "</td>";
@@ -231,6 +233,7 @@
 							echo "<td>" . $tipo . "</td>";
 							echo "<td>" . $editorial . "</td>";
 							echo "<td><a class='fas fa-shopping-cart btn' href='./../carrito/insertar/principal.php?id=$id'></a></td>";
+
 						echo "</tr>";	
 			
 					}
@@ -242,8 +245,8 @@
 		echo "</div>";
 
 	}
-				
-		?>
+			
+?>
 
 	</div>
 

@@ -3,9 +3,6 @@
 @session_start();
 
 class insert_carrito {
-
-	//Parámetros que vienen del POST
-
 	
 	//Parámetros de conexión
 

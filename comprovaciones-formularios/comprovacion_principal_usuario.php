@@ -2,7 +2,7 @@
 
 //Parámetros que vienen del POST
 
-require_once("comprovacion-registro.php");
+require_once("./comprovacion-registro.php");
 
 	$objUsuario = new dades;
 	$objUsuario->validar_dni($_POST["dni"]);

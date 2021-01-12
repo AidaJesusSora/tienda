@@ -42,8 +42,8 @@ class dades {
 
 			if ( substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros%23, 1) != $letra && strlen($letra) != 1 && strlen ($numeros) != 8 ) {
 
-			echo("El dni es incorrecto<br><br>");	
-			$this->errores++;
+				echo("El dni es incorrecto<br><br>");	
+				$this->errores++;
 
 			}
 
@@ -318,8 +318,11 @@ class dades {
 
 			$instruccion = "select count(*) as cuantos from usuarios where nickname = '$nickname'";
 			$resultado = mysqli_query($con, $instruccion);
+
 				while ($fila = $resultado->fetch_assoc()) {
+
 					$numero=$fila["cuantos"];
+
 				} 
 				
 				if ($numero !=0) {
@@ -332,7 +335,9 @@ class dades {
 					$resultado = mysqli_query($con, $instruccion);
 
 						while ($fila = $resultado->fetch_assoc()) {
+
 							$numero=$fila["cuantos"];
+
 						} 
 						
 						if ($numero>=1) {
@@ -341,8 +346,7 @@ class dades {
 
 						}
 				}
-
-
+				
 		}
 
 		function verificar_errores() {

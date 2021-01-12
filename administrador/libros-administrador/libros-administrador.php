@@ -57,7 +57,7 @@
 
 		echo "<div class='row'>";
 
-			error_reporting(E_ALL & ~E_NOTICE);
+			error_reporting(E_ALL & ~E_NOTICE); // Esconde los avisos de NOTICE
 
 			$seleccion = 0;
 

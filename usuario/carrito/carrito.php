@@ -94,7 +94,6 @@
 
 					echo "<tr>";
 
-						//echo "<th scope='col'> # </th>";
 						echo "<th scope='col'> ID Producto </th>";
 						echo "<th scope='col'> Titulo </th>";
 						echo "<th scope='col'> Precio </th>";
@@ -114,7 +113,6 @@
 					echo "<tr>";
 
 						echo "<td scope='row'>" . $id. "</td>";
-						//echo "<td>" . $id . "</td>";
 						echo "<td>" . $titulo . "</td>";
 						echo "<td>" . $preu . "</td>";
 						echo "<td><a class='far fa-trash-alt btn' href='./eliminar/principal.php?id_fila=$id_fila'></a></td>";

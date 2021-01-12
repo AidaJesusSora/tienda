@@ -114,8 +114,6 @@
 
 					echo "<h4 class='text-left'>Datos del usuario</h4>";
 
-					echo "<hr width='75%' class='float-left'>";
-
 					echo "<br>";
 
 					echo "<div clas='row'>";

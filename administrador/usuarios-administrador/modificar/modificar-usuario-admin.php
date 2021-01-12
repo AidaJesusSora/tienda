@@ -15,7 +15,7 @@
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 	<!-- Link JavaScript -->
-	<script type="text/javascript" src="../../../js/java-script.js"> </script>
+	<script type="text/javascript" src="./../../../js/java-script.js"> </script>
 
 </head>
 
@@ -39,7 +39,7 @@
 				<a class="nav-link text-white" href="./../../libros-administrador/libros-administrador.php">Libros</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link text-white" href="../../usuarios-administrador/usuarios-administrador.php">Usuarios</a>
+				<a class="nav-link text-white" href="./../../usuarios-administrador/usuarios-administrador.php">Usuarios</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link text-white" type="button" data-toggle="modal" data-target="#desconexion"
