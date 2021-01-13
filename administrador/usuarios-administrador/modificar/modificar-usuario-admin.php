@@ -129,11 +129,27 @@
 				
 				</div>
 
-				<div class='form-group'>
+				<div class='form-group one-column'>
+
 					<input type='mail' class='form-control' id='exampleInputEmail' name='correo' value='".$correo."' placeholder='Correo'>
+
 				</div>
 			
-				<p><button type='submit' class='btn btn-outline-info btn-block'>Entrar</button></p>
+				<div>
+
+					<div class='col-left'>
+
+						<button type='submit' class='btn btn-outline-success btn-block'>Guardar</button>
+
+					</div>
+
+					<div class='col-right'>
+
+						<a class='btn btn-outline-danger btn-block' id='hov-cancelar' href='./../usuarios-administrador.php'>Cancelar</a>
+
+					</div>
+				
+				</div>
 				
             </form>";
             

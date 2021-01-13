@@ -16,6 +16,17 @@
     font-size: 50px !important;
 }
 
+#hov-cancelar:hover {
+    color: white; 
+    cursor: pointer;
+
+}
+
+#hov-cancelar {
+    color: #dc3545;
+
+}
+
 #sec-random {
     background-color: #d5d5de;
     padding-top: 50px;
@@ -42,13 +53,8 @@ footer {
 	float:left;
 }
 
-/*.col-left-admin {
-	width: 25%;
+.one-column {
+	width:99%;
 	float:left;
-	margin-right:1%;
 }
 
-.col-right-admin {
-	width:25%;
-	float:left;
-}  */

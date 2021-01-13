@@ -293,6 +293,8 @@ class dades {
 	
 		function llamar_bbdd() {
 
+			$this->passwd = password_hash($this->passwd, PASSWORD_DEFAULT);
+
 			$nickname = $_POST["nickname"];
 			$correo = $_POST["correo"];
 

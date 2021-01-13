@@ -65,7 +65,7 @@
 
 		<!-- Columna unica -->
 
-		<div class="form-group">
+		<div class="form-group one-column">
 			<label>Titulo del Libro</label>
 			<input type="text" class="form-control" name="titulo">
 		</div>
@@ -150,7 +150,21 @@
 
 		<!-- Envio -->
 
-		<button type="submit" class="btn btn-outline-info">Entrar</button>
+		<div>
+
+			<div class="col-left">
+
+				<button type="submit" class="btn btn-outline-success btn-block">Añadir Producto</button>
+
+			</div>
+
+			<div class="col-right">
+
+				<a class="btn btn-outline-danger btn-block" id="hov-cancelar" href="./../libros-administrador.php">Cancelar</a>
+
+			</div>
+		
+		</div>
 
 	</form>
 

@@ -1,6 +1,6 @@
 <?php
 
-	include './../../../comprovacion-usuario/login-administrador.php';
+	include "./../../../comprovacion-usuario/login-administrador.php";
 
 ?>
 
@@ -102,12 +102,28 @@
 		
 		</div>
 
-		<div class="form-group">
+		<div class="form-group one-column">
+
 			<input type="password" class="form-control" id="exampleInputPassword1" name="passwd1" placeholder="Introduzca la contraseña de nuevo">
+
 		</div>
 	
-		<p><button type="submit" class="btn btn-outline-info btn-block">Entrar</button></p>
+		<div>
+
+			<div class="col-left">
+
+				<button type="submit" class="btn btn-outline-success btn-block">Registrar</button>
+
+			</div>
+
+			<div class="col-right">
+
+				<a class="btn btn-outline-danger btn-block" id="hov-cancelar" href="./../usuarios-administrador.php">Cancelar</a>
+
+			</div>
 		
+		</div>
+	
 	</form>
 
 </body>

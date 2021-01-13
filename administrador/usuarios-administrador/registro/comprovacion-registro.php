@@ -375,13 +375,28 @@ class dades {
 				
 			}
 
-			$consulta=mysqli_query($con,"insert into usuarios values ('$this->id','$this->dni','$this->nombre','$this->edad','$this->correo','$this->nickname','$this->passwd','$this->apellidos','$this->telefono','$this->passwd1','$this->usuario')");
+			$sql_insert = "INSERT INTO usuarios VALUES ('null','$this->dni','$this->nombre','$this->edad','$this->correo','$this->nickname','$this->passwd','$this->apellidos','$this->telefono','$this->passwd1','$this->usuario')";
 
+			$consulta=mysqli_query($con, $sql_insert);
+			
 			if(!$consulta) {
 				
 				die("Algo ha fallado");
 				
 			} else {
+
+				$nombre_tabla = $this->nickname.'_carrito';
+
+				$creacion_carrito = "CREATE TABLE $nombre_tabla (
+					id_fila BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+					id BIGINT(20) UNSIGNED,
+					titulo VARCHAR (100) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
+					preu decimal(4,2),
+					PRIMARY KEY (id_fila),
+					FOREIGN KEY (id) REFERENCES libros(id)
+				);";
+
+				mysqli_query($con, $creacion_carrito) or die ("Error".mysqli_error($con));
 				
 				header ("Location: ./../usuarios-administrador.php");
 					

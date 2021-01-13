@@ -72,7 +72,7 @@ $logueado=0;
 							
 						}
 					
-						if ((!strcmp($password, $passwd) == 0) || $passwd=="") {
+						if ((!password_verify($password, $passwd) == 0) || $passwd=="") {
 
 							// Usuario fallido
 							header('Location: ./../fallos/usuario_fallido.html');
