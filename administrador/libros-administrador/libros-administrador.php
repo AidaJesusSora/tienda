@@ -51,7 +51,7 @@
 
 	<br>
 
-	<div class="row">
+	<div class="row mx-5">
 
 		<?php
 
@@ -76,7 +76,7 @@
 
 		function mostrar() {
 
-			echo"<div class='col container mx-5'>
+			echo"<div class='col container'>
 
 				<form method='GET' action='./generar/excel/principal.php'>
 
@@ -116,7 +116,7 @@
 
 		function generar_xml() {
 
-			echo"<div class='col container mx-5'>
+			echo"<div class='col container'>
 
 				<form method='GET' action='./generar/xml/principal.php'>
 
@@ -177,7 +177,7 @@
 				mysqli_set_charset($con, "utf8");
 			}
 
-			echo "<div class='table-responsive mx-5'>";
+			echo "<div class='table-responsive'>";
 
 				echo "<table class='table table-striped'>";
 				$instruccion = "SELECT * FROM libros WHERE 1";

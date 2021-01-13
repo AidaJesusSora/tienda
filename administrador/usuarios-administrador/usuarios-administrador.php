@@ -58,7 +58,7 @@
 
 	<br>
 
-	<div class="row">
+	<div class="row mx-5">
 
 		<?php
 
@@ -81,7 +81,8 @@
 		}
 
 		// Generacion de la tabla cogiendo los datos del phpmyadmin
-		echo "<div class='table-responsive mx-5'>";
+
+		echo "<div class='table-responsive'>";
 
 			echo "<table class='table table-striped'>";
 			$instruccion = "SELECT * FROM usuarios WHERE 1";
