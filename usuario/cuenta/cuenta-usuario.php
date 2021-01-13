@@ -41,16 +41,16 @@
 	  
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 		  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-			<li class="nav-item">
+			<li class="nav-item active">
 				<a class="nav-link" href="./../libros/libros.php">Libros</a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item active">
 				<a class="nav-link" href="./../carrito/carrito.php">Carrito</a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item active">
 				<a class="nav-link" href="./cuenta-usuario.php">Mi cuenta</a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item active">
 				<a class="nav-link" type="button" data-toggle="modal" data-target="#desconexion"
 				onclick="funcionAlerta()">Log out</a>
 			</li>
@@ -120,7 +120,7 @@
 
 						echo "<div class='col-sm-8'>";
 						
-							echo "<div class='card'>";
+							echo "<div class='card mb-4'>";
 
 								echo "<div class='card-body'>";
 
@@ -166,7 +166,7 @@
 										
 										echo "</div>";
 
-										echo "<a href='./modificar/modificar-usuario.php' class='btn btn-primary'>Modificar</a>";
+										echo "<a href='./modificar/modificar-usuario.php' class='btn btn-outline-info'>Modificar</a>";
 
 									echo "</form>";
 							

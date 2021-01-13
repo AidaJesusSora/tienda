@@ -38,16 +38,16 @@
 	  
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 		  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-			<li class="nav-item">
+			<li class="nav-item active">
 				<a class="nav-link" href="./libros.php">Libros</a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item active">
 				<a class="nav-link" href="./../carrito/carrito.php">Carrito</a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item active">
 				<a class="nav-link" href="./../cuenta/cuenta-usuario.html">Mi cuenta</a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item active">
 				<a class="nav-link" type="button" data-toggle="modal" data-target="#desconexion"
 				onclick="funcionAlerta()">Log out</a>
 			</li>
@@ -181,67 +181,71 @@
 
 		}
 
-		echo "<div class='row'>";
+		echo "<div class='mx-5'>";
 
-			echo "<div class='table-responsive mr-5 ml-5'>";
+			echo "<div class='row'>";
+
+				echo "<div class='table-responsive'>";
+				
+					echo "<table class='table table-striped'>";
+						$instruccion = "SELECT * FROM libros WHERE 1 ORDER BY $orden";
+						$resultado = mysqli_query($con, $instruccion);
+
+						echo "<thead class='thead-light'>";
 			
-				echo "<table class='table table-striped'>";
-					$instruccion = "SELECT * FROM libros WHERE 1 ORDER BY $orden";
-					$resultado = mysqli_query($con, $instruccion);
+							echo "<tr>";
 
-					echo "<thead class='thead-light'>";
-		
-						echo "<tr>";
+								echo "<th scope='col'> Titulo </th>";
+								echo "<th scope='col'> Autor </th>";
+								echo "<th scope='col'> Publicacion </th>";
+								echo "<th scope='col'> Edicion </th>";
+								echo "<th scope='col'> Precio </th>";
+								echo "<th scope='col'> Genero </th>";
+								echo "<th scope='col'> Paginas </th>";
+								echo "<th scope='col'> Tipo </th>";
+								echo "<th scope='col'> Editorial</th>";
+								echo "<th scope='col'> Carrito </th>";
 
-							echo "<th scope='col'> Titulo </th>";
-							echo "<th scope='col'> Autor </th>";
-							echo "<th scope='col'> Publicacion </th>";
-							echo "<th scope='col'> Edicion </th>";
-							echo "<th scope='col'> Precio </th>";
-							echo "<th scope='col'> Genero </th>";
-							echo "<th scope='col'> Paginas </th>";
-							echo "<th scope='col'> Tipo </th>";
-							echo "<th scope='col'> Editorial</th>";
-							echo "<th scope='col'> Carrito </th>";
+							echo "</tr>";
 
-						echo "</tr>";
+						echo "</thead>";
+						
+						while ($fila = $resultado->fetch_assoc()) {
+				
+							$id = $fila["id"];
+							$titulo = $fila["titulo"];
+							$autor = $fila["autor"];
+							$publicacion = $fila["publicacion"];
+							$edicion = $fila["edicion"];
+							$precio = $fila["precio"];
+							$genero = $fila["genero"];
+							$paginas = $fila["paginas"];
+							$tipo = $fila["tipo"];
+							$editorial = $fila["editorial"];
+				
+							echo "<tr>";
 
-					echo "</thead>";
-					
-					while ($fila = $resultado->fetch_assoc()) {
+								echo "<td>" . $titulo . "</td>";
+								echo "<td>" . $autor . "</td>";
+								echo "<td>" . $publicacion . "</td>";
+								echo "<td>" . $edicion . "</td>";
+								echo "<td>" . $precio . "</td>";
+								echo "<td>" . $genero . "</td>";
+								echo "<td>" . $paginas . "</td>";
+								echo "<td>" . $tipo . "</td>";
+								echo "<td>" . $editorial . "</td>";
+								echo "<td><a class='fas fa-shopping-cart btn' href='./../carrito/insertar/principal.php?id=$id'></a></td>";
+
+							echo "</tr>";	
+				
+						}
+						
+					echo "</table>";
+
+				echo "</div>";
 			
-						$id = $fila["id"];
-						$titulo = $fila["titulo"];
-						$autor = $fila["autor"];
-						$publicacion = $fila["publicacion"];
-						$edicion = $fila["edicion"];
-						$precio = $fila["precio"];
-						$genero = $fila["genero"];
-						$paginas = $fila["paginas"];
-						$tipo = $fila["tipo"];
-						$editorial = $fila["editorial"];
-			
-						echo "<tr>";
-
-							echo "<td>" . $titulo . "</td>";
-							echo "<td>" . $autor . "</td>";
-							echo "<td>" . $publicacion . "</td>";
-							echo "<td>" . $edicion . "</td>";
-							echo "<td>" . $precio . "</td>";
-							echo "<td>" . $genero . "</td>";
-							echo "<td>" . $paginas . "</td>";
-							echo "<td>" . $tipo . "</td>";
-							echo "<td>" . $editorial . "</td>";
-							echo "<td><a class='fas fa-shopping-cart btn' href='./../carrito/insertar/principal.php?id=$id'></a></td>";
-
-						echo "</tr>";	
-			
-					}
-					
-				echo "</table>";
-
 			echo "</div>";
-		
+
 		echo "</div>";
 
 	}

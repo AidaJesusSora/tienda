@@ -41,16 +41,16 @@
 	  
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 		  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-			<li class="nav-item">
+			<li class="nav-item active">
 				<a class="nav-link" href="./../../libros/libros.php">Libros</a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item active">
 				<a class="nav-link" href="./../../carrito/carrito.php">Carrito</a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item active">
 				<a class="nav-link" href="./../cuenta-usuario.php">Mi cuenta</a>
 			</li>
-			<li class="nav-item">
+			<li class="nav-item active">
 				<a class="nav-link" type="button" data-toggle="modal" data-target="#desconexion"
 				onclick="funcionAlerta()">Log out</a>
 			</li>
@@ -120,7 +120,7 @@
 
 						echo "<div class='col-sm-8'>";
 						
-							echo "<div class='card'>";
+							echo "<div class='card mb-4'>";
 
 								echo "<div class='card-body'>";
 
@@ -166,7 +166,21 @@
 										
 										echo "</div>";
 
-										echo "<button type='submit' class='btn btn-primary'>Guardar</a>";
+										echo "<div>
+
+												<div class='col-left'>
+
+													<button type='submit' class='btn btn-outline-success btn-block'>Guardar</button>
+
+												</div>
+
+												<div class='col-right'>
+
+													<a class='btn btn-outline-danger btn-block' id='hov-cancelar' href='./../cuenta-usuario.php'>Cancelar</a>
+
+												</div>
+											
+											</div>";
 
 									echo "</form>";
 							
