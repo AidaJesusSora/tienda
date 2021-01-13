@@ -42,7 +42,9 @@ class insert_carrito {
 
 		$nickname = $_SESSION['nickname'];
 
-		$sql = "INSERT INTO carrito VALUES ('NULL','$id','$titulo','$precio','$nickname')";
+		$nombre_tabla = $nickname.'_carrito';
+
+		$sql = "INSERT INTO $nombre_tabla VALUES ('NULL','$id','$titulo','$precio')";
 		$con->query($sql) or die ("Error".mysqli_error($con));
 
 		if(!$sql) {

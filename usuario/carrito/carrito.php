@@ -87,7 +87,9 @@
 
 				$nickname = $_SESSION['nickname'];
 
-				$instruccion = "SELECT * FROM carrito WHERE nickname = '$nickname'";
+				$nombre_tabla = $nickname.'_carrito';
+
+				$instruccion = "SELECT * FROM $nombre_tabla";
 				$resultado = mysqli_query($con, $instruccion);
 						
 				echo "<thead class='thead-light'>";

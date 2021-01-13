@@ -16,7 +16,7 @@
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	
 	<!-- Link JavaScript -->
-	<script type="text/javascript" src="./../js/java-script.js"> </script>
+	<script type="text/javascript" src="./../../js/java-script.js"> </script>
 
 	<!-- Script para menu mobil -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

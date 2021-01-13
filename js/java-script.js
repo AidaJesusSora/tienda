@@ -2,7 +2,7 @@
 function funcionAlerta(){
 
     if (window.confirm("¿Seguro que quieres salir?")) { 
-        open("/php/tienda/comprovaciones-formularios/logout.php", target="_self");
+        open("/tienda/comprovaciones-formularios/logout.php", target="_self");
     }    
 
 }

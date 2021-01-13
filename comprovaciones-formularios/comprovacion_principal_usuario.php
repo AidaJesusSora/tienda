@@ -14,7 +14,7 @@ require_once("./comprovacion-registro.php");
 	$objUsuario->validar_telefono($_POST["telefono"]);
 	$objUsuario->validar_apellidos($_POST["apellidos"]);
 	$objUsuario->llamar_bbdd();
-	$objUsuario->verificar_errores();
+	//$objUsuario->verificar_errores();
 	
 ?>
 

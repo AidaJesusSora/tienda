@@ -347,43 +347,34 @@ class dades {
 						}
 				}
 				
-		}
-
-		function verificar_errores() {
-		
 			if ($this->errores != 0) {
 
 				header ('Location: ./../fallos/registro_fallido.html');
 
 			} else {
 
-			$servidor="localhost";
-			$usuario_bd="root";
-			$contraseña="";
-			$bd="test";
+			$sql_insert = "INSERT INTO usuarios VALUES ('null','$this->dni','$this->nombre','$this->edad','$this->correo','$this->nickname','$this->passwd','$this->apellidos','$this->telefono','$this->passwd1','$this->usuario')";
 
-			//Realizamos la conexión
-			
-			$con=mysqli_connect($servidor,$usuario_bd,$contraseña,$bd);
-			if(!$con) {
-				
-				die("Con se ha podido realizar la conexión: ". mysqli_connect_error() . "<br>");
-				
-			} else {
-				
-				mysqli_set_charset($con,"utf8");
-				echo "Te has conectado a la BBDD<br>";
-				$_SESSION["con"]=$con;
-				
-			}
-
-			$consulta=mysqli_query($con,"insert into usuarios values ('$this->id','$this->dni','$this->nombre','$this->edad','$this->correo','$this->nickname','$this->passwd','$this->apellidos','$this->telefono','$this->passwd1','$this->usuario')");
+			$consulta=mysqli_query($con, $sql_insert);
 
 			if(!$consulta) {
 				
 				die("Algo ha fallado");
 				
 			} else {
+
+				$nombre_tabla = $this->nickname.'_carrito';
+
+				$creacion_carrito = "CREATE TABLE $nombre_tabla (
+					id_fila BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+					id BIGINT(20) UNSIGNED,
+					titulo VARCHAR (100) CHARACTER SET utf8 COLLATE utf8_spanish_ci,
+					preu decimal(4,2),
+					PRIMARY KEY (id_fila),
+					FOREIGN KEY (id) REFERENCES libros(id)
+				);";
+
+				mysqli_query($con, $creacion_carrito) or die ("Error".mysqli_error($con));
 				
 				header ("Location: ./../index.html");
 					
